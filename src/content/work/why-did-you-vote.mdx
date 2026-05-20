@@ -7,17 +7,20 @@ heroImage: https://placehold.co/1600x900?text=Why+Did+You+Vote
 excerpt: "After the 2024 election I built a quiet, anonymous stream of one-paragraph reasons US voters gave for their choice. No accounts, no metrics surfaced, three weeks to build, about ten dollars a month to run."
 categories: [Product, Personal Project]
 tags: [civic tech, node, sqlite, cloudflare, content moderation]
-externalUrl: https://blog.baselinemakes.com/why-did-you-vote/
 sourceDate: 2024-11-20
 ---
 
 After the 2024 election I wanted to read why people had voted, not how loud they were about it. The feeds I was on were not giving me that, so I built Why Did You Vote, a site that took anonymous one-paragraph reasons from US voters and surfaced them as a quiet stream you could scroll.
 
-![Why Did You Vote landing page](https://placehold.co/1200x675?text=Site+landing+with+submission+stream)
+![Why Did You Vote landing page](https://placehold.co/1200x675?text=Submission+stream)
 *The submission stream, intentionally low on chrome and high on text*
 
-The build took about three weeks. Node and Express on the server, EJS for templates, SQLite for the store, Tailwind for the front, the Google Perspective API for moderation, and Cloudflare for geolocation, CAPTCHA, and rate limiting. Total run cost was roughly ten dollars a month, which mattered because I wanted to keep it running through the long tail after the election heat died down.
+The build took about three weeks. Node and Express on the server, EJS for templates, SQLite for the store, Tailwind for the front, the Google Perspective API for moderation, and Cloudflare for geolocation, CAPTCHA, and rate limiting. Total run cost was roughly ten dollars a month, which mattered because I wanted to keep it running through the long tail after the election heat died down, not just for the post-election news cycle.
 
-The choices I am happiest with are the ones I left out. No analytics, no accounts, no metrics surfaced anywhere. The project was a mission and not a portfolio piece, so I optimized for honest submissions and a clean moderation pipeline, not for traffic. Eight months later it had collected a corpus of plain-language reasons from across the political map.
+The moderation pipeline was the part I worried about most. Perspective scores text on toxicity, identity attack, insult, and a few other axes, so I tuned thresholds to auto-reject the obvious garbage and queue borderline cases for me to manually review. Most submissions went through clean. The borderline ones were almost always passion that read as toxicity to the model, which taught me to err on the side of letting honest, intense writing through. Drop the genuinely abusive, keep the angry-but-real, because the angry-but-real is the entire point of the project.
+
+The perimeter was a separate problem. Geolocation locked submissions to US-based IPs, the CAPTCHA killed the volume bot traffic, and the rate limiter handled the rest. Hard friction at the edge plus anonymous submission turned out to be the right architecture for the bar this project was trying to hold.
+
+The choices I am happiest with are the ones I left out. No analytics, no accounts, no metrics surfaced anywhere. The project was a mission, not a portfolio piece, so I optimized for honest submissions and a clean moderation pipeline, not for traffic. Eight months later it had collected a corpus of plain-language reasons from across the political map.
 
 The lesson I carried out was about reach. The space was saturated. If the goal had been to actually move the conversation I would have needed a real outreach plan into conservative communities, not just availability. That gap was on me, and it changed how I scope the comms side of every project I build now.

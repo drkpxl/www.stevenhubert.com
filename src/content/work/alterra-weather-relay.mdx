@@ -1,0 +1,23 @@
+---
+title: Alterra Weather Relay
+client: Alterra Mountain Company
+tier: '2'
+featured: false
+order: 21
+heroImage: https://placehold.co/1600x900?text=Weather+Relay+Admin
+excerpt: "A small Flask service that ingests data from every weather-station vendor we use, normalizes it into one schema, and relays a clean stream upstream. Built as a backstop for Mountain Powder."
+categories: [Product, Data, Infrastructure]
+tags: [python, flask, weather, docker, alterra]
+sourceDate: 2024-12-01
+---
+
+Weather Relay is a small piece of infrastructure that fixes a specific problem at the resorts. Every mountain runs a different mix of weather stations, each with its own API, its own data format, and its own quirks. Downstream systems like PWS Weather expect a single normalized stream. Weather Relay sits between them.
+
+![Weather Relay admin dashboard](https://placehold.co/1200x675?text=Admin+dashboard)
+*The admin dashboard lists stations across all resorts and surfaces parser status, last sync, and the source-API health*
+
+The service ingests data from each source through a per-vendor parser, normalizes it into a common schema, stores a recent history in SQLite, and relays the result up to PWS Weather. There is a small Flask admin dashboard for adding stations, mapping their source UUIDs to friendly resort-and-location names, and watching the parser status at a glance. The whole thing runs in a Docker container so it is the same in development and production.
+
+I built it as a backstop for the larger Mountain Powder pipeline. The bigger system depends on clean upstream data, and rather than push every weather-station vendor onto a shared format, Weather Relay handles the translation in one place. The technical scope is small. The operational value is large.
+
+TODO: confirm production resort coverage and whether to explicitly call out the Docker / docker-compose setup, or leave it as a generic "runs in a container" framing.

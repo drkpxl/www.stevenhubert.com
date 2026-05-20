@@ -1,13 +1,13 @@
 ---
-title: Bootstrapping a custom snow, lift, and weather reporting API/service
+title: Mountain Powder
 client: Alterra Mountain Company
-agency: Alterra Mountain Company
 tier: '1'
 featured: true
 order: 3
 heroImage: /images/QTA/signage.png
-excerpt: "Mountain Powder is the snow, lift, and weather reporting system I conceived, designed, and shipped for every Alterra resort. One reporter-facing surface, a JSON spine, and a long list of downstream channels that consume it."
-categories: [product, digital strategy, development]
+excerpt: "Mountain Powder is the snow, lift, and weather reporting system I conceived and shipped for every Alterra resort. One reporter-facing surface, a JSON spine, a long list of downstream channels, and most recently a ground-up redesign with new features for the current season."
+categories: [Product, Digital Strategy, Development]
+tags: [alterra, snow reporting, api, mtn powder]
 sourceDate: 2020-05-30
 ---
 
@@ -33,3 +33,20 @@ The same JSON spine drives the customer-facing operations panel at each resort, 
 The last layer is a text-alert signup. Pass holders pick thresholds and get a one-way message when one trips. I worked with legal to wall this list off from every other marketing surface we operate; numbers entered here never get marketed to, and the channel has held its integrity every season since.
 
 Mountain Powder started as a tool to give a reporter back half an hour every morning. It became the data spine that feeds almost every customer-facing surface at every Alterra resort.
+
+### Recent redesign
+
+Five years in, the team and I took Mountain Powder apart and put it back together. The reporting interface, the admin tooling, and the downstream pipeline all got rebuilt around what the product actually has to do now versus what we shipped it to do in 2020. The product had grown beyond its original brief, and the original architecture was starting to feel it.
+
+![Redesigned Mountain Powder admin](https://placehold.co/1200x675?text=Redesigned+admin+interface)
+*The redesigned admin, rebuilt around the workflows reporters actually run today*
+
+TODO (Steven): write the redesign chapter. The structure above is right; what's missing is the specifics:
+- Which problems the 2020 build did not solve well in 2024 / 2025
+- The reporter-workflow changes that drove the redesign brief
+- The new features (which ones are headline?)
+- Any new downstream channels the JSON spine now powers
+- Production scale figures if they are load-bearing (resorts covered, monthly text volume, etc.)
+- The one-line lesson worth carrying forward
+
+Once that lands, I will fold it into prose and pull the TODO out.

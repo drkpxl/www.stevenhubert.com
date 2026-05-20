@@ -1,0 +1,36 @@
+---
+interface Props {
+  src: string;
+  poster: string;
+  width?: number | string;
+  height?: number | string;
+  preload?: 'auto' | 'metadata' | 'none';
+}
+const { src, poster, width, height, preload = 'metadata' } = Astro.props;
+---
+<figure class="video">
+  <video
+    controls
+    playsinline
+    preload={preload}
+    poster={poster}
+    width={width}
+    height={height}
+  >
+    <source src={src} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</figure>
+
+<style>
+  .video {
+    margin: var(--space-6, 2rem) 0;
+  }
+  .video video {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: var(--color-fg, #111);
+    border-radius: var(--radius-2, 4px);
+  }
+</style>

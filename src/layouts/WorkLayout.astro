@@ -1,0 +1,87 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Base from './Base.astro';
+
+interface Props {
+  entry: CollectionEntry<'work'>;
+}
+
+const { entry } = Astro.props;
+const { title, client, agency, role, excerpt, heroImage, tier } = entry.data;
+---
+<Base title={title} description={excerpt}>
+  <article class="work-page" data-layout="work" data-tier={tier}>
+    <header class="work-header">
+      <div class="container">
+        {client && <p class="client-line">{client}{agency && ` · ${agency}`}</p>}
+        <h1>{title}</h1>
+        {role && <p class="role">{role}</p>}
+        <p class="excerpt">{excerpt}</p>
+      </div>
+    </header>
+    {heroImage && (
+      <div class="hero">
+        <img src={heroImage} alt="" />
+      </div>
+    )}
+    <div class="prose">
+      <slot />
+    </div>
+  </article>
+</Base>
+
+<style>
+  .work-page {
+    padding-block: var(--space-7);
+  }
+  .container {
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: var(--space-5);
+  }
+  .work-header {
+    margin-bottom: var(--space-7);
+  }
+  .client-line {
+    font-size: var(--type-2);
+    color: var(--color-fg-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--space-3);
+  }
+  .work-header h1 {
+    font-size: var(--type-7);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.02em;
+    max-width: 22ch;
+  }
+  .role {
+    margin-top: var(--space-3);
+    color: var(--color-fg-muted);
+  }
+  .excerpt {
+    margin-top: var(--space-4);
+    font-size: var(--type-4);
+    color: var(--color-fg-muted);
+    max-width: var(--measure);
+  }
+  .hero {
+    max-width: 80rem;
+    margin: 0 auto var(--space-7);
+    padding-inline: var(--space-5);
+  }
+  .hero img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-3);
+  }
+  .prose {
+    padding-inline: var(--space-5);
+  }
+
+  @media (max-width: 640px) {
+    .work-header h1 {
+      font-size: var(--type-6);
+    }
+  }
+</style>

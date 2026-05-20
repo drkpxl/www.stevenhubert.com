@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import WorkCard from '../../components/WorkCard.astro';
+
+const all = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+
+const tiers: Array<{ key: '1' | '2'; label: string }> = [
+  { key: '1', label: 'Signature work' },
+  { key: '2', label: 'Selected work' },
+];
+---
+<Base title="Work" description="Selected work by Steven Hubert.">
+  <section class="work-index">
+    <div class="container">
+      <header class="page-header">
+        <h1>Work</h1>
+        <p>A selection of projects spanning agency, in-house, and personal work.</p>
+      </header>
+
+      {tiers.map(({ key, label }) => {
+        const entries = all.filter((e) => e.data.tier === key);
+        if (entries.length === 0) return null;
+        return (
+          <section class="tier" data-tier={key}>
+            <h2>{label}</h2>
+            <div class="grid">
+              {entries.map((entry) => <WorkCard entry={entry} />)}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .container {
+    max-width: 72rem;
+    margin-inline: auto;
+    padding: var(--space-8) var(--space-5);
+  }
+  .page-header {
+    margin-bottom: var(--space-8);
+  }
+  .page-header h1 {
+    font-size: var(--type-7);
+    letter-spacing: -0.02em;
+    line-height: var(--leading-tight);
+  }
+  .page-header p {
+    margin-top: var(--space-4);
+    color: var(--color-fg-muted);
+    font-size: var(--type-4);
+    max-width: var(--measure);
+  }
+  .tier {
+    margin-top: var(--space-8);
+  }
+  .tier h2 {
+    font-size: var(--type-5);
+    margin-bottom: var(--space-5);
+    letter-spacing: -0.01em;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-5);
+  }
+
+  @media (max-width: 640px) {
+    .page-header h1 {
+      font-size: var(--type-6);
+    }
+  }
+</style>

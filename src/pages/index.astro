@@ -1,0 +1,100 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import WorkCard from '../components/WorkCard.astro';
+
+const featured = (await getCollection('work', ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 4);
+---
+<Base title="Steven Hubert">
+  <section class="intro">
+    <div class="container">
+      <p class="eyebrow">Digital Product & UX Leadership</p>
+      <h1>Steven Hubert</h1>
+      <p class="lede">
+        Twenty years building and leading the teams that ship class-leading digital products
+        at enterprise scale &mdash; from mountain operations to ecommerce platforms doing
+        $1B+ a year. I work at the intersection of strategy, design, AI, and engineering.
+      </p>
+      <p class="contact">
+        Best way to reach me is on
+        <a href="https://www.linkedin.com/in/stevenhubert/" rel="noopener" target="_blank">LinkedIn</a>.
+      </p>
+    </div>
+  </section>
+
+  {featured.length > 0 && (
+    <section class="featured">
+      <div class="container">
+        <h2>Featured work</h2>
+        <div class="grid">
+          {featured.map((entry) => <WorkCard entry={entry} />)}
+        </div>
+        <p class="see-all">
+          <a href="/work/">See all work &rarr;</a>
+        </p>
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .container {
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: var(--space-5);
+  }
+  .intro {
+    padding-block: var(--space-9) var(--space-8);
+  }
+  .eyebrow {
+    font-size: var(--type-2);
+    color: var(--color-fg-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-4);
+  }
+  .intro h1 {
+    font-size: var(--type-7);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-5);
+  }
+  .lede {
+    font-size: var(--type-4);
+    line-height: var(--leading-snug);
+    max-width: var(--measure);
+    color: var(--color-fg-muted);
+  }
+  .contact {
+    margin-top: var(--space-5);
+    font-size: var(--type-3);
+  }
+  .featured {
+    padding-block: var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+  .featured h2 {
+    font-size: var(--type-5);
+    margin-bottom: var(--space-6);
+    letter-spacing: -0.01em;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-5);
+  }
+  .see-all {
+    margin-top: var(--space-6);
+  }
+
+  @media (max-width: 640px) {
+    .intro h1 {
+      font-size: var(--type-6);
+    }
+    .lede {
+      font-size: var(--type-3);
+    }
+  }
+</style>

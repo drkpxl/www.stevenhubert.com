@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="About" description="About Steven Hubert.">
+  <section class="about">
+    <div class="container prose">
+      <h1>About</h1>
+      <p>
+        Digital experience leader who built Alterra Mountain Company's digital organization
+        from zero to 20+ professionals while driving $1B+ in annual ecommerce revenue.
+        Pioneered AI implementation across product and design workflows. Five-time Cannes
+        Gold winner with deep expertise in product strategy, design systems, and scaling
+        high-performance teams through complex transitions including IPOs and acquisitions.
+      </p>
+      <p>
+        This page is a placeholder while the real content is being rewritten. The best way
+        to get in touch is via
+        <a href="https://www.linkedin.com/in/stevenhubert/" rel="noopener" target="_blank">LinkedIn</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .about {
+    padding-block: var(--space-8);
+  }
+  .container {
+    padding-inline: var(--space-5);
+  }
+  .container h1 {
+    font-size: var(--type-7);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-6);
+  }
+  @media (max-width: 640px) {
+    .container h1 {
+      font-size: var(--type-6);
+    }
+  }
+</style>

@@ -11,58 +11,25 @@ categories: [product, digital strategy, development]
 sourceDate: 2020-05-30
 ---
 
-Mountain Powder grew out of a problem the snow-reporting team brought to me. Every morning, reporters across six resorts logged into multiple systems to update conditions for the website, the email, the trail signs, and a half-dozen other surfaces. The data lived in too many places, the entry forms were brittle, and most of the tooling only worked on a narrow set of desktop browsers.
+Mountain Powder grew out of a problem the snow-reporting team brought to me. Every morning, reporters across six resorts logged into multiple systems to update conditions for the website, the email, the trail signs, and a half-dozen other surfaces. The data lived in too many places, and most of the tooling only worked on a narrow set of desktop browsers.
 
-I led the product end-to-end. The pitch was simple. One responsive admin panel that served as the single source of truth for snow, lift, trail, activity, and weather data, with that data piped out to every downstream channel the resorts cared about. The work started on a whiteboard with snow reporters in the room. Six resorts reported conditions slightly differently, so the harder problem turned out to be agreeing on a shared vocabulary, not the interface itself.
+I led the product end-to-end. The pitch was one responsive admin panel as the single source of truth for snow, lift, trail, activity, and weather data, with that data piped out everywhere. The harder problem turned out to be getting six resorts to agree on a shared vocabulary, not the interface itself.
 
 ![Winter Park's Snow Reporting in Tablet View](/images/QTA/Screenshot%202017-05-05%2010.15.55.png)
-_Winter Park's Snow Reporting in Tablet View_
+*Snow Reporting view, tablet-optimized for use at the base of the mountain*
 
-The reporting view above is what snow reporters actually use, designed for tablets at the base of the mountain. The old system required a click into each item to update one field. The new layout looks busy on purpose. Reporters can edit many rows in a single pass, which is the move they make most often.
+Reporters override the live weather feed when reality on the mountain disagrees with the sensors. Stations freeze with rime ice and report 32° in a storm when it's actually -10°; an anemometer seizes and reads 0 mph during an 80 mph gust; an animal cuts the feed. The override is what lets reporters keep guests accurate while the hardware catches up.
 
-![Winter Parks Trail Reporting in Tablet view](/images/QTA/Screenshot%202017-05-05%2010.17.30.png)
-_Winter Parks Trail Reporting in Tablet View_
-
-Beyond reporter input, the app also pulled live data from the weather stations on each mountain. The build became a forcing function to migrate every ad-hoc weather station onto Aeris Weather, which gave us a consistent data spine. [Here](https://www.pwsweather.com/station/pws/basearea) is an example of Steamboat's Base. With Aeris in place, the app surfaced station data into the reporting view and let reporters override when reality on the mountain disagreed with what the sensors said.
-
-![Winter Park Squirrels](/images/QTA/Unknown.jpeg)
-_Winter Park Squirrels - Thanks to Patrick D for the photo._
-
-The override matters more than it sounds. Stations freeze with rime ice and report 32° in a storm when it's actually -10°. An anemometer seizes and reads 0 mph during an 80 mph gust. A hungry animal cuts the feed. The override is what lets reporters keep guests accurate while the hardware catches up.
+Every override and edit writes to an audit log. Before Mountain Powder, each change was printed and filed in a cabinet so legal could prove what had been published when.
 
 ![Overrides](/images/QTA/Screenshot%202017-05-05%2010.38.27.png)
-_Override Options_
+*Override Options, with full audit logging*
 
-Every override and edit writes to an audit log. Before Mountain Powder, each change was printed and filed in a cabinet so legal could prove what was published when. The new logging tool replaces that cabinet with a queryable history download by category and date range.
-
-![History Download](/images/QTA/Screenshot%202017-05-05%2011.14.53.png)
-_History Download_
-
-What I didn't fully anticipate when we scoped this was how much leverage the same data spine would give us on the customer side. The most visible payoff for guests is a single, accurate operations panel per resort, like [Blue Mountain's conditions report](https://www.bluemountain.ca/mountain/conditions-report).
-
-![Stratton Weather Page](/images/QTA/Screenshot%202017-05-05%2011.23.59.png)
-_Stratton's Weather Page_
-
-That panel is powered by a JSON feed (with an XML companion) that drives a long list of other surfaces.
-
-![Printable Report](/images/QTA/printable.png)
-_A printable trail report used at the front desk of local lodging destinations_
-
-![Digital Signage](/images/QTA/signage.png)
-_Digital Signage used at the resorts._
-
-![Winter Park Email](/images/QTA/Screenshot%202017-05-05%2014.15.33.png)
-_Winter Park Email Integration_
-
-The same feed pushes into the daily snow-report email through IBM's Watson Marketing Cloud and into digital signage at the lodges. The app writes to a publishing table on a schedule, and the email and signage pick up the latest conditions from there without anyone touching them.
-
-We also built a custom Alexa skill on top of the same feed, so a guest could ask for current conditions at any resort as part of their flash briefing.
+The same JSON spine drives the customer-facing operations panel at each resort, the daily snow-report email through IBM Watson Marketing Cloud, the digital signage in the lodges, and a custom Alexa skill for resort conditions.
 
 ![Alert Signup](/images/QTA/Screenshot%202017-05-05.png)
-_Text Alert Signup_
+*Text Alert Signup at alerts.quicktrax.com*
 
-The last layer was a text-alert signup at [alerts.quicktrax.com](http://alerts.quicktrax.com). Pass holders pick the thresholds they care about and get a one-way message when one trips: a snowstake photo on any snow day, a notification at a chosen accumulation, or a heads-up when a storm is forecast in the next 48 hours.
+The last layer is a text-alert signup. Pass holders pick thresholds and get a one-way message when one trips. I worked with legal to wall this list off from every other marketing surface we operate; numbers entered here never get marketed to, and the channel has held its integrity every season since.
 
-Asking customers for a phone number is sensitive, so I worked with our legal team to wall this signup off from every other marketing surface we operate. Numbers entered here never get marketed to. It is a strictly transactional channel and we kept it that way every season since.
-
-Mountain Powder started as a tool to give a reporter back half an hour every morning. It became the data spine that feeds almost every customer-facing surface at every Alterra resort. Product strategy, brand, design, build, partnerships, and the long unglamorous work of getting six resorts to agree on what packed powder means.
+Mountain Powder started as a tool to give a reporter back half an hour every morning. It became the data spine that feeds almost every customer-facing surface at every Alterra resort.

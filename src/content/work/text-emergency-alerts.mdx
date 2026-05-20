@@ -12,14 +12,8 @@ tags: [intrawest, technology, digital strategy]
 sourceDate: 2017-05-30
 ---
 
-This product came out of a conversation with a Winter Park ski patroller named Will. Ski patrol communication today usually runs over phone or CB radio. The patroller on scene calls a supervisor, who calls A, B, and C depending on the situation. Will's idea was to expand the QTA platform with private messaging groups that could send one-way alerts at each stage of an incident escalation.
+This product came out of a conversation with a Winter Park ski patroller named Will. Ski patrol communication runs over phone or CB radio: the patroller on scene calls a supervisor, who calls A, B, and C depending on the situation. Will's idea was to expand the QTA platform with private messaging groups that send one-way alerts at each stage of escalation, so an injury, a mechanical issue, and a personnel issue each route along their own path.
 
-An injury escalates differently than a mechanical issue, and a personnel issue follows a different path again. Letting patrol define custom groups makes those escalation paths cleaner and faster under pressure.
+The use case is urgent, so the UI does as little as possible. Three sections: add recipients, create or edit groups, send a message. The product is not novel; SaaS tools in this space exist, but they are not shaped around a ski resort's operational reality or its budget. A modest Heroku bill plus the per-message cost runs this at a real resort, and it rolled out across the Intrawest family.
 
-Because the use case is urgent, the UI does as little as possible. Three sections: add recipients, create or edit groups, send a message. That's it. The product is not novel and there are SaaS tools in this space, but those tools were not shaped around a ski resort's operational reality or its budget. A modest Heroku bill plus the per-message cost was enough to run this at a real resort.
-
-QuickTrax SOS rolled out across the Intrawest family: Winter Park, Steamboat, Stratton, Blue, Tremblant, and Snowshoe. The natural next step is two-way communication, an inbox the right people can monitor, but a 24/7 inbox needs a clear ownership story before it ships. Options on the table:
-
-- Forwarding to a specific set of numbers responsible for monitoring
-- Browser push notifications
-- Email alerts, or a native lightweight client similar to Slack but trimmed down for this single purpose
+The natural next step is two-way communication; an inbox the right people can monitor. That needs a clear 24/7 ownership story before it ships, which is why it hasn't yet.

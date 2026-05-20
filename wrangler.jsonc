@@ -1,0 +1,27 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "stevenhubert-site",
+	"main": "./src/worker.ts",
+	"compatibility_date": "2026-02-24",
+	"compatibility_flags": ["nodejs_compat"],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "stevenhubert-content",
+			"database_id": "7481f308-d714-4227-9c16-b8f2897bb06e",
+		},
+	],
+	"r2_buckets": [
+		{
+			"binding": "MEDIA",
+			"bucket_name": "stevenhubert-media",
+		},
+	],
+	// Plugin sandboxing via Worker Loader requires Cloudflare paid plan ($5/mo).
+	// Leave commented out for free tier — EmDash works fine without plugins.
+	// "worker_loaders": [
+	// 	{
+	// 		"binding": "LOADER",
+	// 	},
+	// ],
+}

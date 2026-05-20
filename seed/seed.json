@@ -1,0 +1,3730 @@
+{
+  "$schema": "https://emdashcms.com/seed.schema.json",
+  "version": "1",
+  "meta": {
+    "name": "Steven Hubert",
+    "description": "Senior Director at Alterra Mountain Company. Portfolio of digital product and UX work.",
+    "author": "Steven Hubert"
+  },
+  "settings": {
+    "title": "Steven Hubert",
+    "tagline": "Senior Director, Alterra Mountain Company"
+  },
+  "collections": [
+    {
+      "slug": "projects",
+      "label": "Projects",
+      "labelSingular": "Project",
+      "supports": [
+        "drafts",
+        "revisions",
+        "search",
+        "seo"
+      ],
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "searchable": true
+        },
+        {
+          "slug": "featured_image",
+          "label": "Featured Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "slug": "client",
+          "label": "Client",
+          "type": "string"
+        },
+        {
+          "slug": "year",
+          "label": "Year",
+          "type": "string"
+        },
+        {
+          "slug": "summary",
+          "label": "Summary",
+          "type": "text",
+          "searchable": true
+        },
+        {
+          "slug": "content",
+          "label": "Content",
+          "type": "portableText",
+          "searchable": true
+        },
+        {
+          "slug": "gallery",
+          "label": "Gallery",
+          "type": "json"
+        },
+        {
+          "slug": "url",
+          "label": "Project URL",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "slug": "pages",
+      "label": "Pages",
+      "labelSingular": "Page",
+      "supports": [
+        "drafts",
+        "revisions",
+        "search"
+      ],
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "searchable": true
+        },
+        {
+          "slug": "content",
+          "label": "Content",
+          "type": "portableText",
+          "searchable": true
+        }
+      ]
+    }
+  ],
+  "taxonomies": [
+    {
+      "name": "category",
+      "label": "Categories",
+      "labelSingular": "Category",
+      "hierarchical": false,
+      "collections": [
+        "projects"
+      ],
+      "terms": [
+        {
+          "slug": "branding",
+          "label": "Branding"
+        },
+        {
+          "slug": "web",
+          "label": "Web Design"
+        },
+        {
+          "slug": "print",
+          "label": "Print"
+        },
+        {
+          "slug": "photography",
+          "label": "Photography"
+        }
+      ]
+    },
+    {
+      "name": "tag",
+      "label": "Tags",
+      "labelSingular": "Tag",
+      "hierarchical": false,
+      "collections": [
+        "projects"
+      ],
+      "terms": [
+        {
+          "slug": "identity",
+          "label": "Identity"
+        },
+        {
+          "slug": "ui-ux",
+          "label": "UI/UX"
+        },
+        {
+          "slug": "development",
+          "label": "Development"
+        },
+        {
+          "slug": "art-direction",
+          "label": "Art Direction"
+        },
+        {
+          "slug": "packaging",
+          "label": "Packaging"
+        },
+        {
+          "slug": "ecommerce",
+          "label": "E-commerce"
+        },
+        {
+          "slug": "editorial",
+          "label": "Editorial"
+        }
+      ]
+    }
+  ],
+  "menus": [
+    {
+      "name": "primary",
+      "label": "Primary Navigation",
+      "items": [
+        {
+          "type": "custom",
+          "label": "Work",
+          "url": "/work"
+        },
+        {
+          "type": "custom",
+          "label": "Contact",
+          "url": "/contact"
+        }
+      ]
+    }
+  ],
+  "content": {
+    "pages": [
+      {
+        "id": "about",
+        "slug": "about",
+        "status": "published",
+        "data": {
+          "title": "About",
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "We are a small design studio focused on creating meaningful work for thoughtful clients. Founded in 2020, we've had the privilege of working with brands across technology, culture, and the arts.",
+                  "_key": "k1"
+                }
+              ],
+              "_key": "k0"
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "Our approach is simple: listen carefully, think deeply, and craft with intention. We believe that good design is invisible — it gets out of the way and lets the work speak for itself.",
+                  "_key": "k3"
+                }
+              ],
+              "_key": "k2"
+            },
+            {
+              "_type": "block",
+              "style": "h2",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "What we do",
+                  "_key": "k5"
+                }
+              ],
+              "_key": "k4"
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "text": "We specialize in brand identity, web design, and art direction. Whether you need a complete visual identity or a single website, we bring the same level of care and attention to every project.",
+                  "_key": "k7"
+                }
+              ],
+              "_key": "k6"
+            }
+          ]
+        }
+      }
+    ],
+    "projects": [
+      {
+        "id": "canon",
+        "slug": "canon",
+        "status": "published",
+        "data": {
+          "title": "Canon North Pole Pixma",
+          "client": "Canon",
+          "year": "2013",
+          "summary": "This application was a first of a kind accomplishment that relied a large number of Amazon AWS render servers running custom C++ and FFMPEG code rendering out a real MP4 video on demand from the user.",
+          "featured_image": {
+            "$media": {
+              "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/canonnorthpolenov28.jpg",
+              "alt": "Canon North Pole Pixma",
+              "filename": "canonnorthpolenov28.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "_key": "k1",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k0",
+                  "text": "During my time at Mondo Robot I executive produced a first of its kind video compositing application that in near-real time provided users a customized video with their child's christmas wish.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k6",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k5",
+                  "text": "The Canon North Pole PIXMA app provides a unique and interactive experience allows children to write, draw or use pre-selected images to create their holiday wish on Desktop or Mobile. Once the wish has been customized, it gets composited in near real time to a sharable video, where users can watch a video of Santa receiving their wish printed on a Canon PIXMA printer.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k11",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k10",
+                  "text": "This personalized Facebook experience was optimized for desktop, tablet and mobile making the site fully responsive. Unique creation tools were developed to allow users to draw, type or utilize a set of pre-determined images to create their personalized wish list for Santa. Part of the magic of this experience was the speed at which the users could create a wish list and watch it being printed at the North Pole for Santa to see. To make this happen, the wish was tracked to the video, optimized and encoded in near real-time for desktop as well as mobile.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k15",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k14",
+                  "text": "This application was a first of a kind accomplishment that relied a large number of Amazon AWS render servers running custom C++ and FFMPEG code rendering out a real MP4 video on demand from the user. The servers tracked and composited the wish list on the video, along with shadows and highlight to ensure things looked real. Thanks to this application users could view and save their very own personalized video.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ],
+          "gallery": [
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/North-Pole-PIXMA-Image-Snow-Globe-Event.jpg",
+                "alt": "North Pole Pixma",
+                "filename": "North-Pole-PIXMA-Image-Snow-Globe-Event.jpg",
+                "caption": "Canon North Pole Pixma Start Page"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/PismaWishList.png",
+                "alt": "Customize Screen",
+                "filename": "PismaWishList.png",
+                "caption": "Customize Screen"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/Canon.mp4",
+                "alt": "",
+                "filename": "Canon.mp4"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/Canon_04.jpg",
+                "alt": "Video Screen",
+                "filename": "Canon_04.jpg",
+                "caption": "Video Screen"
+              }
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "project-management",
+            "interactive-production"
+          ],
+          "tag": [
+            "grey",
+            "consumer-goods",
+            "facebook-app",
+            "canon"
+          ]
+        }
+      },
+      {
+        "id": "cmh-redesign",
+        "slug": "cmh-redesign",
+        "status": "published",
+        "data": {
+          "title": "CMH Heli-Skiing Website Redesign",
+          "client": "Intrawest",
+          "year": "2017",
+          "summary": "A complete re-envisioning of CMH's online experience built using the latest front-end technology and featuring a static site CMS.",
+          "featured_image": {
+            "$media": {
+              "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/CMH/dreams.png",
+              "alt": "CMH Heli-Skiing Website Redesign",
+              "filename": "dreams.png"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "_key": "k20",
+              "style": "h3",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k19",
+                  "text": "History",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k22",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k21",
+                  "text": "The original CMH website was built on a very old version of Sitecore alongside our resort websites. It was a very heavy handed IT decision that didn't work well for CMH. Customers and CMH employees alike were not happy with the website. At times, in order to load the list of available heli-trips users, would have to wait full minutes. The site was also poorly organized because a UX designed for a ski resort was being forced upon a heli-skiing site. We also looked at click stream data and noticed customers we having troubling finding what they were looking for.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k24",
+              "style": "h3",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k23",
+                  "text": "The Project",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k29",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k28",
+                  "text": "Through a number of collaborative working sessions with the CMH and agency teams we worked through a very detailed understanding of our customers’ flow through the website, including the type of information they are looking for and how to find more of it. We used our intuition and also tested small sets of users. Once these decisions were made, designs were created that attempted to solve the many UX issues outstanding with the old sites. We involved many team members to weigh in and to really challenge our assumptions and research in order to create a content hierarchy that balances the very different top user paths taken by those new to heli vs seasoned fliers. ",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k43",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k30",
+                  "text": "As we got ready to move into development we knew we wanted to go small, fast and nimble with this site. After the experience of having an overkill CMS, and a team with fairly technical chops the decision was made to go with the ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k32",
+                  "text": "JAMSTACK",
+                  "marks": [
+                    "k31"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k33",
+                  "text": " approach to have a truly static site powered by APIs for both its feed and CMS data. To accomplish this we used ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k35",
+                  "text": "Contentful",
+                  "marks": [
+                    "k34"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k36",
+                  "text": " for the CMS, ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k38",
+                  "text": "Netlify",
+                  "marks": [
+                    "k37"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k39",
+                  "text": " for the hosting and building of of the static pages, and ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k41",
+                  "text": "Jekyll",
+                  "marks": [
+                    "k40"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k42",
+                  "text": " as the build tool allowing for easily templating of the website.",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k31",
+                  "href": "https://jamstack.org/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k34",
+                  "href": "https://www.contentful.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k31",
+                  "href": "https://jamstack.org/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k37",
+                  "href": "https://www.netlify.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k31",
+                  "href": "https://jamstack.org/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k34",
+                  "href": "https://www.contentful.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k31",
+                  "href": "https://jamstack.org/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k40",
+                  "href": "https://jekyllrb.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k31",
+                  "href": "https://jamstack.org/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k34",
+                  "href": "https://www.contentful.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k31",
+                  "href": "https://jamstack.org/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k37",
+                  "href": "https://www.netlify.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k31",
+                  "href": "https://jamstack.org/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k34",
+                  "href": "https://www.contentful.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k31",
+                  "href": "https://jamstack.org/"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k45",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k44",
+                  "text": "A lot of time was spent getting the trip grid right. It had to be familiar to existing customers while also being much more usable then the old one. The CMH and agency team spent went through many iterations to get this right in the design phase, and as a result, it’s working splendidly.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k50",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k49",
+                  "text": "The agency team also integrated a JSON feed that provided a mix of weather information from actual boots-on-the-ground observations and automated weather stations in order to provide an easy to understand view of ski conditions at lodges with additional specific lodge forecasts.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k54",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k51",
+                  "text": "####Weather Reporting\n",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k52",
+                  "text": "\n",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k53",
+                  "text": "Lodge Weather",
+                  "marks": [
+                    "em"
+                  ]
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k59",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k58",
+                  "text": "Sample JSON",
+                  "marks": [
+                    "strong"
+                  ]
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k60",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k61",
+                  "text": "[{  \n  \"name\": \"Bobbie Burns\",  \n  \"snowpack_depth\": \"400\",\n  \"air_temp_high\": \"8\",\n  \"air_temp_low\": \"-4\",\n  \"snowfall_yesterday\": \"5\",\n  \"snowfall_week\": 67,\n  \"atmospheric_conditions\": \"Scattered cloud. Moderate V wind.\",\n  \"timestamp\": \"2017-04-23T00:00:00.000-06:00\"\n},\n{\n  \"name\": \"Bugaboos\",\n  \"snowpack_depth\": \"350\",\n  \"air_temp_high\": \"6\",\n  \"air_temp_low\": \"-5\",\n  \"snowfall_yesterday\": \"15\",\n  \"snowfall_week\": 82,\n  \"atmospheric_conditions\": \"Snowing <1cm/hr. Light W wind.\",\n  \"timestamp\": \"2017-04-23T00:00:00.000-06:00\"\n}]",
+                  "marks": [
+                    "code"
+                  ]
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k63",
+              "style": "h3",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k62",
+                  "text": "The Results",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k65",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k64",
+                  "text": "The site launch only just occurred, so conversion based results are hard to report on a this time. I can say that by going with the JAMSTACK approach we were able to accomplish a lot more on a very limited budget while also giving customers a completely new experience that helped them understand what a CMH trip is like on a screaming fast responsive website. Both CMH and the c-level team are impressed with the design, usability and of course the budget that we were able to hit.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ],
+          "gallery": [
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/CMH/CMH-Home.png",
+                "alt": "CMH Home",
+                "filename": "CMH-Home.png",
+                "caption": "Homepage of new CMH website"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/CMH/booking.png",
+                "alt": "Booking Grid",
+                "filename": "booking.png",
+                "caption": "Sample of the new booking grid"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/CMH/lodge-weather.png",
+                "alt": "Lodge Weather",
+                "filename": "lodge-weather.png"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/CMH/weather-detail.png",
+                "alt": "Lodge Weather",
+                "filename": "weather-detail.png",
+                "caption": "Lodge Weather Details"
+              }
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "digital-strategy",
+            "technology",
+            "development"
+          ],
+          "tag": [
+            "intrawest",
+            "technology",
+            "digital-strategy",
+            "development"
+          ]
+        }
+      },
+      {
+        "id": "digitalglobe-sales-conference",
+        "slug": "digitalglobe-sales-conference",
+        "status": "published",
+        "data": {
+          "title": "DigitalGlobe Sales Conference",
+          "client": "DigitalGlobe",
+          "year": "2014",
+          "summary": "DigitalGlobe's yearly sales conference is always a huge event. To kick off the 3 day event the VP of Sales wanted to Go Big with an keynote introduction like no other. ",
+          "featured_image": {
+            "$media": {
+              "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/dg_globe.png",
+              "alt": "DigitalGlobe Sales Conference",
+              "filename": "dg_globe.png"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "_key": "k67",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k66",
+                  "text": "During my time at Mondo Robot I executive produced the digital and print components of DigitalGlobes annual sales conference. The keynote intro is always a huge point of anticipation for the sales employees and with the year's theme being \"Go Big\" we couldn't go bigger than having the VP of Sales jump out of a plane right before his keynote. ",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k69",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k68",
+                  "text": "This video played on 3, 40ft tall screens for the approximately 1000 employees at the conference. ",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k73",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k72",
+                  "text": "What followed was the VP of Sales entering the conference room still in skydiving clothes ready to start the keynote. The crowd went wild and it really set the stage for an energetic and invigorating sales conference. ",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k75",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k74",
+                  "text": "Once the excitement subsided a bit we went into the presentation containing custom created 3d animations that were controlled in real time to match the pacing and nuances of the speakers. We carefully balanced our work to not detract from the speaker but to enhance the experience for all.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k79",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k78",
+                  "text": "Finally to increase the excitement we designed a set of posters, gobos, and handouts that set the mood as attendees entered the conference.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k83",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k82",
+                  "text": "All of these elements combined to create a truly memorable experience that will leave the attendees feeling charged up and ready to succeed for DigitalGlobe.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ],
+          "gallery": [
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/DGIntroFull.mp4",
+                "alt": "",
+                "filename": "DGIntroFull.mp4"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/DG.mp4",
+                "alt": "",
+                "filename": "DG.mp4"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/DG_Print_Banners_620.png",
+                "alt": "Globe",
+                "filename": "DG_Print_Banners_620.png"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/dg_data.png",
+                "alt": "Data",
+                "filename": "dg_data.png"
+              }
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "project-management",
+            "event-production"
+          ],
+          "tag": [
+            "digital-globe",
+            "event",
+            "motion-graphics"
+          ]
+        }
+      },
+      {
+        "id": "ikon-pass",
+        "slug": "ikon-pass",
+        "status": "published",
+        "data": {
+          "title": "Crafting an Ikon",
+          "client": "Alterra Mountain Company",
+          "year": "2022",
+          "summary": "Each year I lead the team that brings the Ikon Pass website to life — strategy, UX, design, and build. The product launched in 2018, building on lessons from earlier multi-resort passes, and the site has had to grow with it: from two products to six, from a roster of resorts to a global membership.",
+          "featured_image": {
+            "$media": {
+              "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/Homepage.png",
+              "alt": "Crafting an Ikon",
+              "filename": "Homepage.png"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "_key": "ikon1",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ikon1s",
+                  "text": "When the Ikon Pass launched in 2018 we knew the brand needed to feel different from anything the ski industry had done before — approachable, modern, and confident enough to redefine what a multi-mountain pass could be. The first site lived in component-based responsive design from day one, with a tone that was fun without becoming flippant.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "ikon2",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ikon2s",
+                  "text": "Every year the homepage gets a refresh. Some years that's a marketing campaign rollout; others it's a flagship feature like the Ikon Pass app or a redesigned product matrix. As the partner roster expanded past fifty resorts, the site's job shifted with it — from cataloging a network to selling the experience of one.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "ikon3",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ikon3s",
+                  "text": "The product matrix has grown from two passes to six. Each year we work through how to merchandise the lineup without burying the products that serve smaller audiences. The current visual hierarchy — taller cards for the products we lead with, clear left-to-right ordering, a single marker for the top-tier benefit, icons earning their place where copy can't — came out of years of running tests, reading session recordings, and listening to the guest services team.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "ikon4",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ikon4s",
+                  "text": "I've led this work through every annual relaunch since inception. It's the project I'm most proud of: a brand still genuinely new in its category, a team that has matured alongside it, and a website that gets to be both a marketing campaign and a transactional engine at the same time.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ],
+          "gallery": [
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/Homepage.png",
+                "alt": "Ikon Pass Homepage Evolution (Click to Expand)",
+                "filename": "Homepage.png",
+                "caption": "Ikon Pass Homepage Evolution (Click to Expand)"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/ShopPasses.png",
+                "alt": "Ikon Pass Shop Passes Evolution (Click to Expand)",
+                "filename": "ShopPasses.png",
+                "caption": "Ikon Pass Shop Passes Evolution (Click to Expand)"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/IkonShopPasses23.png",
+                "alt": "Ikon Pass Shop Passes Sales Block (Click to Expand)",
+                "filename": "IkonShopPasses23.png",
+                "caption": "Ikon Pass Shop Passes Sales Block (Click to Expand)"
+              }
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "ux-design",
+            "product",
+            "development"
+          ],
+          "tag": []
+        }
+      },
+      {
+        "id": "innovating-lodging",
+        "slug": "innovating-lodging",
+        "status": "published",
+        "data": {
+          "title": "Innovating Lodging @ Winter Park Resort",
+          "client": "Winter Park",
+          "year": "2022",
+          "summary": "We rebuilt Winter Park's lodging experience around real inventory and real pricing — letting guests see availability, packages, and rates without leaving our domain, and check out through Inntopia's APIs.",
+          "featured_image": {
+            "$media": {
+              "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/WinterPark2016.jpg",
+              "alt": "Innovating Lodging @ Winter Park Resort",
+              "filename": "WinterPark2016.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "_key": "lodge1",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "lodge1s",
+                  "text": "Before this project, the Winter Park lodging pages were brochureware. Guests could see what rooms existed, but the moment they wanted to book they were bounced to a separate SaaS-hosted experience that didn't look or feel like the rest of the site. Confidence dropped at exactly the moment we needed it to be highest.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "lodge2",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "lodge2s",
+                  "text": "Working with Inntopia, we integrated their inventory and pricing APIs directly into our pages. Guests now see real-time availability, dynamic pricing, package combinations, and considerably richer room information without leaving the Winter Park brand. The cart and checkout still live on Inntopia infrastructure, but the experience leading up to it is ours.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "lodge3",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "lodge3s",
+                  "text": "The UX work was the bulk of the project. We had to reconcile two information models — what Winter Park marketing wanted to communicate about each lodge, and what Inntopia's data layer could actually express — into one coherent product story. Filter behavior, package merchandising, mobile booking flow, fallback states when inventory was missing — every interaction took a position on whose voice was in charge.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "lodge4",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "lodge4s",
+                  "text": "We also added lightweight upsell logic to surface relevant lift and lesson products at the right point in the booking flow, learned from session patterns we'd been watching in the analytics for months.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "lodge5",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "lodge5s",
+                  "text": "The pattern has held: a content-led brand experience riding on a transactional partner's platform, with both sides invisible to the guest. It's a model we've since adapted for other resorts.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ],
+          "gallery": [
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/WinterPark2016.jpg",
+                "alt": "Before Redesign",
+                "filename": "WinterPark2016.jpg",
+                "caption": "Before Redesign"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/WinterPark2022.jpg",
+                "alt": "After Redesign",
+                "filename": "WinterPark2022.jpg",
+                "caption": "After Redesign"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/WinterParkCart2022.jpg",
+                "alt": "Cart Redesign, damage waiver upsell",
+                "filename": "WinterParkCart2022.jpg",
+                "caption": "Cart Redesign, damage waiver upsell"
+              }
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "ux-design",
+            "apis",
+            "product"
+          ],
+          "tag": [
+            "digital-globe",
+            "event",
+            "motion-graphics"
+          ]
+        }
+      },
+      {
+        "id": "ketel1-vodka",
+        "slug": "ketel1-vodka",
+        "status": "published",
+        "data": {
+          "title": "Ketel One - A Gentleman's Call",
+          "client": "Ketel One",
+          "year": "2013",
+          "summary": "A Gentleman's Call by Ketel One was a campaign to encourage men across America to regain their long forgotten gentlemanly personalities by showing America what they would do to make the world a better place if given $100K.",
+          "featured_image": {
+            "$media": {
+              "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/cnn.jpg",
+              "alt": "Ketel One - A Gentleman's Call",
+              "filename": "cnn.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "_key": "k135",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k134",
+                  "text": "A Gentleman's Call by Ketel One was a campaign to encourage men across America to regain their long forgotten gentlemanly personalities by showing America what they would do to make the world a better place given if $100K.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k140",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k139",
+                  "text": "During my time at Grey NY I had the opportunity to executive produce this project. The ask was simple. Encourage gentleman around the US to describe how they make world a better place in order to possibly win $100K. We built an entry tool into a custom Facebook application, which was than whittled down to 5 finalists that would then have a video shot by Vice profiling them. The video was then posted on social and the public was then able to vote on which of the 5 would win the $100K.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k144",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k143",
+                  "text": "Entrants had the ability to customize the visual direction for their idea, and encourage others to vote them up through Facebook Likes and social mentions. The whole thing was backed by a custom CMS that allows us to moderate in real-time any objectionable content.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k147",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k145",
+                  "text": "Meet the Finalists Video",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k146",
+                  "text": "\nAn amalgamation of the 5 different videos.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k155",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k150",
+                  "text": "Winning Video",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k151",
+                  "text": "\nThe ultimate winner was Corbin Clay who is the owner of ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k153",
+                  "text": "Azure Furniture",
+                  "marks": [
+                    "k152"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k154",
+                  "text": " who makes beetle kill furniture. His products are so great I ending up buying a custom kitchen table from him a few months after he won.",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k152",
+                  "href": "https://azurefurniture.com/"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k159",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k158",
+                  "text": "In the end we had 10's of thousands of well thought out, comprehensive entries. By differentiating our contest from other more normal \"Enter To Win\" contests we generated a significant amount of earned media which helped tremendously given our limited budget.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k161",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k160",
+                  "text": "Some press mentions include:",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k164",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k163",
+                  "text": "Wall Street Journal",
+                  "marks": [
+                    "k162"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k162",
+                  "href": "http://online.wsj.com/article/PR-CO-20130125-910422.html"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k167",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k166",
+                  "text": "303 Magazine",
+                  "marks": [
+                    "k165"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k165",
+                  "href": "http://303magazine.com/2013/01/50-shades-of-green-mpb-meets-mvp/"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k170",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k169",
+                  "text": "DeZeen",
+                  "marks": [
+                    "k168"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k168",
+                  "href": "http://www.dezeen.com/2012/07/20/call-for-entries-to-a-gentlemans-call-for-ketel-one-vodka/"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k173",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k172",
+                  "text": "Interview Magazine",
+                  "marks": [
+                    "k171"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k171",
+                  "href": "http://www.interviewmagazine.com/culture/ketel-one-a-gentlemans-call/"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k176",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k175",
+                  "text": "Good Men Project",
+                  "marks": [
+                    "k174"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k174",
+                  "href": "http://goodmenproject.com/good-work/ketel-one-and-gq-issue-a-gentlemans-call/"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k179",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k178",
+                  "text": "The Awl",
+                  "marks": [
+                    "k177"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k177",
+                  "href": "http://www.theawl.com/2012/11/ketel-one-sponsored"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k182",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k181",
+                  "text": "Business Insider",
+                  "marks": [
+                    "k180"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k180",
+                  "href": "http://www.businessinsider.com/ketel-one-gentlemans-call-2012-7"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k185",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k184",
+                  "text": "Elite Daily",
+                  "marks": [
+                    "k183"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k183",
+                  "href": "http://elitedaily.com/money/entrepreneurship/gentlemans-call-gq-ketel-pursuit/"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            }
+          ],
+          "gallery": [
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/ketel1.jpg",
+                "alt": "Ketel One Homepage",
+                "filename": "ketel1.jpg",
+                "caption": "Ketel One Contest Homepage"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/ketel2.jpg",
+                "alt": "Video Screen",
+                "filename": "ketel2.jpg"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/MeettheFinalists.mp4",
+                "alt": "",
+                "filename": "MeettheFinalists.mp4"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/ToasttoCorbinClay.mp4",
+                "alt": "",
+                "filename": "ToasttoCorbinClay.mp4"
+              }
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "project-management",
+            "interactive-production"
+          ],
+          "tag": [
+            "grey",
+            "consumer-goods",
+            "facebook-app"
+          ]
+        }
+      },
+      {
+        "id": "mikes-hard-lemonade",
+        "slug": "mikes-hard-lemonade",
+        "status": "published",
+        "data": {
+          "title": "Mike's Hard Lemonade Digital",
+          "client": "Mike's Hard Lemonade",
+          "year": "2012",
+          "summary": "Helping to bring attention to Mike's Hard as an alternative drink option for millennials by increasing the presence of Mike's Hard in the social space with a very limited budget but endless creativity.",
+          "featured_image": {
+            "$media": {
+              "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/bearart_900.jpg",
+              "alt": "Mike's Hard Lemonade Digital",
+              "filename": "bearart_900.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "_key": "k190",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k189",
+                  "text": "During my time at Grey NY I served as the executive producer focusing on bringing attention to Mike's Hard as an alternative drink option for millennials by increasing the presence of Mike's Hard in the social space through a number of really fun social apps including the following.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k192",
+              "style": "h3",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k191",
+                  "text": "Mike's Mariachi",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k194",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k193",
+                  "text": "On Cuatro de Mayo we commissioned a local Brooklyn band, dressed them up as Mariachi characters and have them play songs written in real time by by a team of copywriters that received inspiration from live tweets.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k202",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k198",
+                  "text": "A novel ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k200",
+                  "text": "workflow",
+                  "marks": [
+                    "k199"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k201",
+                  "text": " was developed ensuring legal compliance and creative approval before each song was sung. The steps were as follows:",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k199",
+                  "href": "/images/workflow.png"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k204",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k203",
+                  "text": "Tweets get added to a Google doc",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "number",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k206",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k205",
+                  "text": "A copywriter claims the tweet",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "number",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k208",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k207",
+                  "text": "Lyrics are written",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "number",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k210",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k209",
+                  "text": "Lyrics are then marked as approved by a Creative Director",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "number",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k212",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k211",
+                  "text": "Lyrics are then marked as approved by Legal",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "number",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k214",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k213",
+                  "text": "Lyrics are finally loaded into the teleprompter to be sung by the band",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "number",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k216",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k215",
+                  "text": "This allowed us to work very smoothly and without drama during the live event. It was a fantastically effective tool that helped allow the campaign to be a breakout success.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k219",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k217",
+                  "text": "Promo Video",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k218",
+                  "text": "\nWe promoted the live event with a video teaser on social and paid advertising",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k224",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k222",
+                  "text": "Pre-Event Videos",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k223",
+                  "text": "\nVideos like this were produced for customers to add their name and have a video delivered custom for them.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k228",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k227",
+                  "text": "We got some great press",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k231",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k230",
+                  "text": "Agency Spy - Mike's Mariachi",
+                  "marks": [
+                    "k229"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k229",
+                  "href": "http://www.mediabistro.com/agencyspy/mikes-hard-lemonade-band-will-mariachi-ize-just-about-any-song_b32710"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k234",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k233",
+                  "text": "CSP",
+                  "marks": [
+                    "k232"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k232",
+                  "href": "http://www.cspnet.com/category-management-news-data/beverages-news-data/articles/mikes-hard-lemonade-launches-new-ad"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k237",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k236",
+                  "text": "Ad Week",
+                  "marks": [
+                    "k235"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k235",
+                  "href": "http://www.adweek.com/adfreak/mikes-hard-lemonade-welcomes-some-unexpected-visitors-142143"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k239",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k238",
+                  "text": "I also led about a dozen other social campaigns throughout the Mike's Hard selling season. All we just as off the wall as the Mariachi band and generated plenty of buzz and social media conversation around the brand that previously didn't exist in social.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k241",
+              "style": "h3",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k240",
+                  "text": "Bear in a Bikini Sweepstakes",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k243",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k242",
+                  "text": "This was a classic sweepstakes where anyone could enter from Mike's facebook page to have a VIP experience in South Beach for labor day weekend. This was the video produced promoting it on social.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k247",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k246",
+                  "text": "###Winner Recap\nThis video posted on social recapped the winners experience in South Beach",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k251",
+              "style": "h3",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k250",
+                  "text": "Score the Fourth",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k253",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k252",
+                  "text": "A clever facebook app was developed where users could use a predefined soundboard or add their own sounds to a library of ridiculous sound clips in order to score their own ridiculous 4th of July celebration",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ],
+          "gallery": [
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/nombre.png",
+                "alt": "Sign Up",
+                "filename": "nombre.png",
+                "caption": "Nombre's Facebook Signup"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/Mariachi+Live+Stream.jpg",
+                "alt": "Mike's Mariachi",
+                "filename": "Mariachi+Live+Stream.jpg",
+                "caption": "Mike's Mariachi Live Stream"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/MikesMariachi.mp4",
+                "alt": "",
+                "filename": "MikesMariachi.mp4"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/name_vides.mp4",
+                "alt": "",
+                "filename": "name_vides.mp4"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/BearinaBikini.mp4",
+                "alt": "",
+                "filename": "BearinaBikini.mp4"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/MikesLaborDay.mp4",
+                "alt": "",
+                "filename": "MikesLaborDay.mp4"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/scorethe4th.mp4",
+                "alt": "",
+                "filename": "scorethe4th.mp4"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/MikesScreenShot.jpg",
+                "alt": "Mike's Website",
+                "filename": "MikesScreenShot.jpg",
+                "caption": "Mike's Website"
+              }
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "project-management",
+            "interactive-production"
+          ],
+          "tag": [
+            "grey",
+            "consumer-goods",
+            "facebook-app",
+            "mikes-hard-lemonade"
+          ]
+        }
+      },
+      {
+        "id": "quicktrax-alerts",
+        "slug": "quicktrax-alerts",
+        "status": "published",
+        "data": {
+          "title": "Mountain Powder",
+          "client": "Alterra Mountain Company",
+          "year": "2020",
+          "summary": "Mountain Powder is the internal product I led — a single admin where on-mountain staff report conditions, lifts, trails, and weather, replacing a tangle of disconnected systems with one source of truth that powers every downstream channel.",
+          "featured_image": {
+            "$media": {
+              "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/QTA/Screenshot%202017-05-05%2010.15.55.png",
+              "alt": "Bootstrapping a custom snow, lift, and weather reporting API/service",
+              "filename": "Screenshot%202017-05-05%2010.15.55.png"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "_key": "mp1",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "mp1s",
+                  "text": "Before Mountain Powder, snow reporting across our resorts was a daily exercise in coordinating disconnected systems. Snow reporters logged into a half-dozen tools every morning — one for the website, one for the email newsletter, one for the lift status, one for trail closures — and re-entered the same data into each. Audit trails lived in literal file cabinets, printed daily for legal compliance. The tools only worked on desktop, and only on a narrow set of browsers.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "mp2",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "mp2s",
+                  "text": "I led the team that designed and built Mountain Powder as the single source of truth: one responsive admin panel where staff enter conditions once and watch them propagate across every customer-facing surface — websites, marketing emails, SMS alerts, Alexa skills, third-party feeds.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "mp3",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "mp3s",
+                  "text": "The interface design was the hard part. Each of our then-six resorts reported on snow slightly differently. After many rounds of feedback we agreed on a shared vocabulary for conditions and a layout dense enough to update an entire morning's report in a single screen — a deliberate departure from the old click-into-each-row approach. Snow reporters update from phones now; they used to print pages.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "mp4",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "mp4s",
+                  "text": "Under the hood, Mountain Powder consolidated weather feeds from our on-mountain stations through Aeris and exposed them through the same panel. When a station freezes in a storm and starts reporting 32° during a -10° morning, reporters can override the bad data without leaving the app. Audit logging is built in — every change, with timestamp, exportable by category.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "mp5",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "mp5a",
+                  "text": "The data Mountain Powder produces now flows out as a JSON feed that powers daily snow report emails, mountain conditions pages, the Alexa flash briefing skill, and the public-facing ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "mp5b",
+                  "text": "alerts.quicktrax.com",
+                  "marks": [
+                    "mp5link"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "mp5c",
+                  "text": " SMS signup tool that lets guests subscribe to conditions thresholds — a powder-day push for skiers who'd rather not be marketed to.",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "mp5link",
+                  "href": "http://alerts.quicktrax.com"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "mp6",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "mp6s",
+                  "text": "What started as a workflow tool for snow reporters became business-critical infrastructure for the company. It's still the system every Alterra resort relies on every operating day.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ],
+            {
+              "_type": "block",
+              "_key": "k268",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k267",
+                  "text": "Reporting daily on mountain conditions such as new snowfall, temperature, snow conditions, lift, trail, and activity status was a major chore for snow reporters and webmasters. With the previous setup, they would have to log into multiple systems every day, revising multiple fields in order to update their websites/emails on a site that was further limited by functioning only on the desktop computers for a limited set of browsers.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k270",
+              "style": "h3",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k269",
+                  "text": "The Solution",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k272",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k271",
+                  "text": "Build a responsive admin panel that served as the single point of truth for all relevant mountain statistics. A system that allows a snow reporter to update data in a single location and have that data update the website, email, text message, Alexa App, and other 3rd party consumers of the website",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k274",
+              "style": "h4",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k273",
+                  "text": "Approach",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k276",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k275",
+                  "text": "This project started the old-fashioned way: Sketches on a whiteboard, followed by markers on paper. Each of our six resorts reported on snow/weather slightly differently so many, many rounds of presentation/feedback/revision were necessary in order to determine the best UI and relevant data points that each resort required in order to communicate to their guests consistently and easily. Nailing the UI was pretty easy (the bar was quite low here), but agreeing on a consistent list of snow conditions proved to be difficult.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k281",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k280",
+                  "text": "What is being shown here is the interface the snow reporters use in order to update the mountain information everyday. It’s not a public facing view, and is only used for data entry. The intent was to be able to update as much as one can with the least amount of clicks. The old system required clicks into each item in order to update. This new layout, while very busy, makes it very easy to update many rows in one fell swoop. A key requirement of the now reporting team.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k289",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k285",
+                  "text": "In addition to creating Snow/Lift/Trail/Activity reporting, the application also consumed weather feeds from our stations on the mountain. Prior to this project many ad-hoc weather station systems were set up. Through the course of this project the team migrated all of these stations to report from Aeris Weather. ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k287",
+                  "text": "Here",
+                  "marks": [
+                    "k286"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k288",
+                  "text": " is an example of Steamboat's Base.",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k286",
+                  "href": "https://www.pwsweather.com/station/pws/basearea"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k291",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k290",
+                  "text": "Once all weather stations were migrated the app then pulled feed data from Aeris to the Mountain Powder app. From here, the app allowed snow reporters to override the data",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k296",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k295",
+                  "text": "The app provided this functionality because on mountain weather can be quite extreme, weather stations can freeze over with rime ice during as storm and report 32° when it’s actually -10° out. The anemometer can break so the wind say 0 MPG when it is really gusting at 80. Or, a hungry animal can get in the way and break the feed to the internet. This override feature allows snow reporters to address any of these situations while still providing accurate information to our customers.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k298",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k297",
+                  "text": "The last problem solved for the reporters by this tool is audit logging.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k303",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k302",
+                  "text": "Previously, every time a reporter updated the report he or she printed up the updated page and added it to a file cabinet. So, there were literally reams of paper that showed when snowfall increased half an inch that change got printed up and filed. This had to be done for legal reasons as there was no other way to prove whether there was an update or not. The new Mountain Powder system provides a reporting tool that lets you select the category of changes you are interested in, plus the time range and you can download a detailed log of each and every change.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k308",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k307",
+                  "text": "To recap the benefits for the reporters, this tool now allows them to update all mountain information in one place, lets them update anything from their mobile device and saves them time and paper printing up each and every change. These benefits alone would more than justify the development effort here. However, many customer benefits were also gained by this effort.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k310",
+              "style": "h4",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k309",
+                  "text": "Customer Benefits",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k314",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k311",
+                  "text": "The most outward benefit is, of course, accurate weather reporting and mountain conditions on our redesigned websites. Users have basically an operations panel outlining the status of the mountain on one easy-to-understand page. ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k313",
+                  "text": "https://www.bluemountain.ca/mountain/conditions-report",
+                  "marks": [
+                    "k312"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k312",
+                  "href": "https://www.bluemountain.ca/mountain/conditions-report"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k319",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k318",
+                  "text": "This page is powered by a JSON feed (with an XML feed also available) that powers many other customer facing experiences including….",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k329",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k326",
+                  "text": "\n",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k327",
+                  "text": "Winter Park Email Integration",
+                  "marks": [
+                    "em"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k328",
+                  "text": "\nThe app is also integrated with Watson (IBMs) Marketing Cloud API so that the data is included in the daily snow report email that our resorts send out. The app write to a DB table with updated data on a set publishing schedule, and then the data in that table gets automatically populated into the email and delivered to the customer.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k331",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k330",
+                  "text": "Custom feeds were created that allowed us to create a custom Alexa Notification that can be added to customers flash briefing for an up to date description of the conditions at the Alterra Mountain Company resort of your choice. The creation of this app allows for seamless integration into your news day.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k339",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k335",
+                  "text": "Lastly the website ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k337",
+                  "text": "http://alerts.quicktrax.com",
+                  "marks": [
+                    "k336"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k338",
+                  "text": " was created to allow customers to sign up for text message alerts when specific user-selectable thresholds were met. For example if I wanted a photo of the snowstake whenever there is snow I can sign up for that, or if I only want to know when 12” has fallen, or is expected in the next 48 hours, I can sign up for those as well. This website allows our pass holders to rest easy knowing that they will never miss a powder day.",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k336",
+                  "href": "http://alerts.quicktrax.com"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k341",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k340",
+                  "text": "We knew it would be sensitive getting users to give their phone numbers to us, so I worked with our legal team to specifically create a wall between this website and our other more marketing-specific websites. Any phone number entered here will NEVER get spammed by us or sent any sort of marketing messages. This is a strictly transactional website. Customers get what they requested, nothing more, nothing less. Sign-ups here have been extremely successful with well over 100K text messages being successfully delivered every month of the season. If you are a skier and go to our mountains this is a fantastic app to sign up for as it stays out of your way when it isn’t snowing.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k343",
+              "style": "h3",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k342",
+                  "text": "Conclusion",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k345",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k344",
+                  "text": "As you can see, what started out a simple app to make the Snow Reporter experience more efficient turned out to become a multi-faceted product that provides value to our customers through a large number of verticals. Through smart planning and extensible technology the product was able to deliver a product that can work for users on their terms. I’m extremely proud of how this came out and look forward to many years of usage at all of our resorts.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ],
+          "gallery": [
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/QTA/Screenshot%202017-05-05%2010.15.55.png",
+                "alt": "Winter Park’s Snow Reporting in Tablet View",
+                "filename": "Screenshot%202017-05-05%2010.15.55.png",
+                "caption": "Winter Park’s Snow Reporting in Tablet View"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/QTA/Screenshot%202017-05-05%2010.17.30.png",
+                "alt": "Winter Parks Trail Reporting in Tablet view",
+                "filename": "Screenshot%202017-05-05%2010.17.30.png",
+                "caption": "Winter Parks Trail Reporting in Tablet View"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/QTA/Unknown.jpeg",
+                "alt": "Winter Park Squirrels - Thanks to Patrick D for the photo",
+                "filename": "Unknown.jpeg",
+                "caption": "Winter Park Squirrels Thanks to Patrick D for the photo."
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/QTA/Screenshot%202017-05-05%2010.38.27.png",
+                "alt": "Overrides",
+                "filename": "Screenshot%202017-05-05%2010.38.27.png",
+                "caption": "Override Options"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/QTA/Screenshot%202017-05-05%2011.14.53.png",
+                "alt": "History Download",
+                "filename": "Screenshot%202017-05-05%2011.14.53.png",
+                "caption": "History Download"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/QTA/Screenshot%202017-05-05%2011.23.59.png",
+                "alt": "Stratton Weather Page",
+                "filename": "Screenshot%202017-05-05%2011.23.59.png",
+                "caption": "Stratton's Weather Page"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/QTA/printable.png",
+                "alt": "Printable Report",
+                "filename": "printable.png",
+                "caption": "A printable trail report used at the front desk of local lodging destinations"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/QTA/signage.png",
+                "alt": "Digital Signage",
+                "filename": "signage.png",
+                "caption": "Digital Signage used at the resorts."
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/QTA/Screenshot%202017-05-05%2014.15.33.png",
+                "alt": "Winter Park Email",
+                "filename": "Screenshot%202017-05-05%2014.15.33.png"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/QTA/Screenshot%202017-05-05.png",
+                "alt": "Alert Signup",
+                "filename": "Screenshot%202017-05-05.png",
+                "caption": "Text Alert Signup"
+              }
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "product",
+            "digital-strategy",
+            "development"
+          ],
+          "tag": []
+        }
+      },
+      {
+        "id": "sitecore-redesign",
+        "slug": "sitecore-redesign",
+        "status": "published",
+        "data": {
+          "title": "Designing a Modular UX approach for 15 Ski Resorts",
+          "client": "Alterra Mountain Company",
+          "year": "2022",
+          "summary": "Alterra Mountain Company owns and operates 15 ski resorts. It is Alterra's goal to allow them to be unique and free to market their brand as they see fit. My task was to design a system and CMS to allow for flexibility while allowing reuse of products.",
+          "featured_image": {
+            "$media": {
+              "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/DeerValleyHomepage2022.png",
+              "alt": "Designing a Modular UX approach for 15 Ski Resorts",
+              "filename": "DeerValleyHomepage2022.png"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "_key": "k347",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k346",
+                  "text": "The homepage of Alterra's ski resorts serve as the \"front door\" to the brand so when designing a system we needed to make sure the brand could come through. One way to excel at this is via background video. It allows a newly arriving guest to experience unique mountain moments and really takes in what a vacation at Alterra's resorts entails.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k353",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k352",
+                  "text": "Deer Valley excel's here at letting the guest experience the brand with beautiful landscape while also highlighting the ever important booking widget always overlaying the video.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k355",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k354",
+                  "text": "Since Each of the 15 brands plays on this theme slightly differently and offer slightly different mountain offerings so I needed to design a framework that allows for that flexibility which you can see below.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k361",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k360",
+                  "text": "I also designed a backend experience to make it possible for local mountain employees without a background in technology to easily update layout and content based on their unique mountain needs.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k367",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k366",
+                  "text": "This customization extends throughout the site allowing for the development team to ship new features without having to develop for 15 different use cases. This combination of reusability and uniqueness allows for deep customization with the costs savings realized by having a single codebase.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ],
+          "gallery": [
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/DeerValleyHomepage2022.png",
+                "alt": "Cart Redesign, damage waiver upsell",
+                "filename": "DeerValleyHomepage2022.png",
+                "caption": "Cart Redesign, damage waiver upsell"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/AllResortList.jpg",
+                "alt": "All Sites Homepages (Click to Expand)",
+                "filename": "AllResortList.jpg",
+                "caption": "All Sites Homepages (Click to Expand)"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/DVHomeAdmin.png",
+                "alt": "Homepage Booking Widget Customization Admin Experience",
+                "filename": "DVHomeAdmin.png",
+                "caption": "Homepage Booking Widget Customization Admin Experience"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/Crystal2018.jpg",
+                "alt": "Before Redesign",
+                "filename": "Crystal2018.jpg",
+                "caption": "Before Redesign"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/Crystal2022.jpg",
+                "alt": "After Redesign",
+                "filename": "Crystal2022.jpg",
+                "caption": "After Redesign"
+              }
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "ux-design",
+            "product",
+            "development"
+          ],
+          "tag": []
+        }
+      },
+      {
+        "id": "ski-colorado",
+        "slug": "ski-colorado",
+        "status": "published",
+        "data": {
+          "title": "Ski Colorado Ski Pass Redesign",
+          "client": "Intrawest",
+          "year": "2017",
+          "summary": "A fast and clean redesign of a beloved Colorado ski pass website backed by a static site CMS featuring quick load times and clear messaging.",
+          "featured_image": {
+            "$media": {
+              "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/sc_home.png",
+              "alt": "Ski Colorado Ski Pass Redesign",
+              "filename": "sc_home.png"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "_key": "k382",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k378",
+                  "text": "Ski Colorado was a multi-mountain product primarily aimed at the Colorado ski market driving hundreds of millions of dollars of revenue annually and the site was old and deperately in need of a redesign. One overarching goal was to simplify the site to feature our most important product, the Rocky Mountain Super Pass + (RSMP+). The old site ( view it here: ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k380",
+                  "text": "Ski Colorado Archive",
+                  "marks": [
+                    "k379"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k381",
+                  "text": " ) was previously designed to sell products from our entire mountain pass portfolio, however, based on the analytics it was easy to see that the RSMP+ was the hero product and thus deserving of hero treatment.",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k379",
+                  "href": "http://bit.ly/2nK78AP"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k384",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k383",
+                  "text": "With this initial direction we set out to design a flexible, responsive and fast website that would be an easy adjustment for longtime customers returning to renew their passes. We did this by clearly dedicating sections of the website in easy-to-understand chunks and providing a very concise FAQ that answers what we think are the questions customers are most likely to have, based on some excellent insight from our Guest Services team, up at Winter Park.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k386",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k385",
+                  "text": "Based on initial heat mapping and NPS responses we think we are off to a good start, but will continue to monitor as the season gets further underway.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k399",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k389",
+                  "text": "With site speed being the focus, we decided to go the static website route using ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k391",
+                  "text": "Jekyll",
+                  "marks": [
+                    "k390"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k392",
+                  "text": " and hosting with ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k394",
+                  "text": "Netlify",
+                  "marks": [
+                    "k393"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k395",
+                  "text": " a fantastic static site hosting service we use for a number of our websites, including the very rich and dynamic ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k397",
+                  "text": "CMH",
+                  "marks": [
+                    "k396"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k398",
+                  "text": ".",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k390",
+                  "href": "https://jekyllrb.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k393",
+                  "href": "https://www.netlify.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k390",
+                  "href": "https://jekyllrb.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k396",
+                  "href": "https://www.canadianmountainholidays.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k390",
+                  "href": "https://jekyllrb.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k393",
+                  "href": "https://www.netlify.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k390",
+                  "href": "https://jekyllrb.com/"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k401",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k400",
+                  "text": "The difference in raw performance using this approach is clearly illustrated by these Pingdom results:",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k405",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k404",
+                  "text": "It’s important to bear in mind this is an \"A\" rating for a very image-heavy website with plenty of fancy javascript to handle virtual pages, and various other user actions. No small accomplishment.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k410",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k406",
+                  "text": "Despite being a static website, we still needed a CMS to make timely updates to rates, FAQs, etc. In planning for this, we integrated a lightweight static CMS provider called ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k408",
+                  "text": "Forestry",
+                  "marks": [
+                    "k407"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k409",
+                  "text": ". With Forestry anyone can easily add/edit text and images without the need for a developer. This has allowed the marketing team to be incredibly responsive to changes as they are needed.",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k407",
+                  "href": "https://forestry.io/"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k418",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k411",
+                  "text": "With the new site also came increasingly detailed analytics data and the ability to A/B test and personalize copy/images/CTAs based on a huge number of different attributes, thanks to a much loved tool called ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k413",
+                  "text": "Convert",
+                  "marks": [
+                    "k412"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k414",
+                  "text": ". We are able to message our Texas customers differently than our Colorado or New York customers, test CTAs, and/or colors. By integrating this tool we hope to improve our overall conversation rate just like we have done using the tool on ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k416",
+                  "text": "TheMaxPass.com",
+                  "marks": [
+                    "k415"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k417",
+                  "text": ".",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k412",
+                  "href": "https://www.convert.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k415",
+                  "href": "https://www.themaxpass.com/"
+                },
+                {
+                  "_type": "link",
+                  "_key": "k412",
+                  "href": "https://www.convert.com/"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k420",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k419",
+                  "text": "Lastly, and perhaps most importantly, this site was architected, designed, built, written and optimized completely in-house. We could have easily spent in the high five figures to have an agency learn about our brand, our requirements and our content only to design and build a site that doesn’t perform as well as this one will. I am incredibly proud of the team for pulling this off. What may seem like a simple site actually packs a lot of marketing intelligence and good design practices behind it while also performing extremely well for the end user. I hope we can continue the trend away from engaging outside web agencies for these smaller scale projects, instead using in-house teams that can bring expertise to aspects of our website development.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k424",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k423",
+                  "text": "Sample of responsive content changes.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ],
+          "gallery": [
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/sc_home.png",
+                "alt": "Ski Colorado Homepage",
+                "filename": "sc_home.png"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/p1372.jpeg",
+                "alt": "SkiColorado Heatmap",
+                "filename": "p1372.jpeg"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/pingdom.jpg",
+                "alt": "Pingdom Results",
+                "filename": "pingdom.jpg"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/skico-responsive.gif",
+                "alt": "Animation",
+                "filename": "skico-responsive.gif"
+              }
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "digital-strategy",
+            "technology",
+            "development"
+          ],
+          "tag": [
+            "intrawest",
+            "technology",
+            "digital-strategy",
+            "development"
+          ]
+        }
+      },
+      {
+        "id": "text-emergency-alerts",
+        "slug": "text-emergency-alerts",
+        "status": "published",
+        "data": {
+          "title": "Text Emergency Alerts Alerts",
+          "client": "Intrawest",
+          "year": "2017",
+          "summary": "A text message notification system for quick communication of incident data to a wide variety of groups.",
+          "featured_image": {
+            "$media": {
+              "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/qtsos.jpg",
+              "alt": "Text Emergency Alerts Alerts",
+              "filename": "qtsos.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "_key": "k428",
+              "style": "h3",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k427",
+                  "text": "Opportunity",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k433",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k429",
+                  "text": "The opportunity to create this product came from a member of Winter Park's ski patrol team, Will, and was just too good pass up, especially when we knew it would be an easy bolt-on to the efforts already undertaken on the ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k431",
+                  "text": "QTA",
+                  "marks": [
+                    "k430"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k432",
+                  "text": " customer notification app. ",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k430",
+                  "href": "https://www.stevenhubert.com/works/quicktrax-alerts/"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k435",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k434",
+                  "text": "When a safety issue, such as a skier's injury, arises on the mountain, the most common method of communication is your typical phone/CB radio tree. The ski patrol that is present on scene makes a call to his or her supervisor, who then calls persons A,B,and C depending on the situation. Will had a great idea to expand the QTA app to allow for private messaging groups to send one-way alerts at each stage of the safety-issue-escalation process. For example, if someone breaks his leg, the organization of the notification tree would be structured very differently than in the event something more serious occurred, and structured differently still in the event of a mechanical issue vs a personnel issue. Being able to define custom groups allows for easier and  more efficient escalation and communication paths. ",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k437",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k436",
+                  "text": "Given the urgent nature of these alerts, we opted to keep the UI as simple as possible and divide it into 3 major sections:",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k439",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k438",
+                  "text": "####Add Recipients\nPut simply, this allows for the creation of users that can receive text messages.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k441",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k440",
+                  "text": "####Create/Edit Groups\nUser can assign the previously added recipients to specific notification groups.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k443",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k442",
+                  "text": "####Send Message\nUser can select the desired group, send the message with logging of messages sent",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k445",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k444",
+                  "text": "As you can see, simple and straightforward. This product isn't revolutionary by any means, and there are many SaaS products that exist loosely in this space, but this app functions well for a ski resort's individual needs, for a nominal monthly cost (cost of message, plus modest hosting on Heroku).  And, at the end of the day, this application helps employees on the mountain to deal with urgent situations a bit more easily, hopefully resulting in better outcomes and improved overall satisfaction. ",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k447",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k446",
+                  "text": "The QuickTrax SOS product is currently rolling out across the Intrawest family of resorts: Winter Park, Steamboat, Stratton, Blue, Tremblant and Snowshoe, but will expand further as there is need.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k449",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k448",
+                  "text": "Future expansion plans include providing an inbox for sorts? for incoming messages, but because this isn't a web interface that is monitored 24/7, a few more questions need to be answered before we can begin building that feature. Some ideas we have been throwing around include:",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k451",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k450",
+                  "text": "Forwarding to a specific set of numbers responsible for management",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k453",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k452",
+                  "text": "Push alerts via SafariEdgeChrome's notification tools",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k455",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k454",
+                  "text": "Email alerts, or perhaps a native electron app similar to Slack but much more lightweight.",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k460",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k456",
+                  "text": "If you have additional ideas on this to share to make this app even better please let me know on ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k458",
+                  "text": "Twitter",
+                  "marks": [
+                    "k457"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k459",
+                  "text": ". ",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k457",
+                  "href": "https://twitter.com/stevenhubertron"
+                }
+              ]
+            }
+          ],
+          "gallery": [
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/qtsos-messages.png",
+                "alt": "QTSOS Messages Screen",
+                "filename": "qtsos-messages.png"
+              }
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "digital-strategy",
+            "technology"
+          ],
+          "tag": [
+            "intrawest",
+            "technology",
+            "digital-strategy"
+          ]
+        }
+      },
+      {
+        "id": "we-choose-the-moon",
+        "slug": "we-choose-the-moon",
+        "status": "published",
+        "data": {
+          "title": "JFK Library - We Choose the Moon",
+          "client": "JFK Library",
+          "year": "2010",
+          "summary": "We Choose The Moon is an interactive re-creation of the historic Apollo 11 mission to the moon, inspired by John F. Kennedy's grand vision. A re-creation that over 3.5 million people have taken to date. A million of which visited on the very first day to experience in real time as all the world did in 1969.",
+          "featured_image": {
+            "$media": {
+              "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/landing.jpg",
+              "alt": "JFK Library - We Choose the Moon",
+              "filename": "landing.jpg"
+            }
+          },
+          "content": [
+            {
+              "_type": "block",
+              "_key": "k464",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k462",
+                  "text": "WeChooseTheMoon.org",
+                  "marks": [
+                    "k461"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k463",
+                  "text": " is an interactive re-creation of the historic Apollo 11 mission to the moon, inspired by John F. Kennedy's grand vision. A re-creation that over 3.5 million people have taken to date. A million of which visited on the very first day to experience in real time as all the world did in 1969.",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k461",
+                  "href": "http://www.wechoosethemoon.org"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k469",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k468",
+                  "text": "During my time at Domani Studios I had an amazing opportunity to work with the Martin Agency and the JFK Library to create a piece of history that the would stand the test of time. We Choose The Moon has and still doing that (provided you still use Adobe Flash).",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k472",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k471",
+                  "text": "Watch Adobe Featurette",
+                  "marks": [
+                    "k470"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k470",
+                  "href": "http://tv.adobe.com/en/watch/traditional-media-in-transition/domani-studios-we-choose-the-moon/"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k477",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k473",
+                  "text": "The creation of this site was unlike any site I have worked on. We needed to build a site that would in effective handle 1MM concurrent users that are watching the Apollo mission in real-time. We did this through the use of 200 servers provided by AOL, Akaimai for video streaming, and Limelight for mp3 streaming of the actual 4 days of audio recorded during the actual mission. If managing all of that wasn't enough we had to make sure it all synced together. Luckily we got it right, were featured on ",
+                  "marks": []
+                },
+                {
+                  "_type": "span",
+                  "_key": "k475",
+                  "text": "CNN",
+                  "marks": [
+                    "k474"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k476",
+                  "text": ", and were the #1 trending topic on Twitter for about 6 hours.",
+                  "marks": []
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k474",
+                  "href": "http://www.youtube.com/watch?v=K_iQfqqILUQ"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "_key": "k480",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k478",
+                  "text": "Cannes Entry",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k479",
+                  "text": "\nWe won big at Cannes with 5 gold lions. A number unprecedented in digital at the time. This was the entry video",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k485",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k483",
+                  "text": "Awards",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k484",
+                  "text": "\nThere are some of the many awards we received: ",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            },
+            {
+              "_type": "block",
+              "_key": "k488",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k487",
+                  "text": "FWA Site of the Year",
+                  "marks": [
+                    "k486"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k486",
+                  "href": "http://www.thefwa.com/site/we-choose-the-moon?c=SOTYPCA"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k490",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k489",
+                  "text": "5 Cannes Gold Lions",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k493",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k492",
+                  "text": "SXSW Web Awards: Motion Graphics",
+                  "marks": [
+                    "k491"
+                  ]
+                }
+              ],
+              "markDefs": [
+                {
+                  "_type": "link",
+                  "_key": "k491",
+                  "href": "http://sxsw.com/interactive/awards/past-winners"
+                }
+              ],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k495",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k494",
+                  "text": "London International Awards: GOLD",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k497",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k496",
+                  "text": "Communication Arts Webpick",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k499",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k498",
+                  "text": "Creativity Top Pick",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k501",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k500",
+                  "text": "Hive Awards",
+                  "marks": []
+                }
+              ],
+              "markDefs": [],
+              "listItem": "bullet",
+              "level": 1
+            },
+            {
+              "_type": "block",
+              "_key": "k504",
+              "style": "normal",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "k502",
+                  "text": "Complete Launch Sequence",
+                  "marks": [
+                    "strong"
+                  ]
+                },
+                {
+                  "_type": "span",
+                  "_key": "k503",
+                  "text": "\nThis is an export of the complete motion graphic launch sequence.",
+                  "marks": []
+                }
+              ],
+              "markDefs": []
+            }
+          ],
+          "gallery": [
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/images/moon1.jpg",
+                "alt": "Homepage",
+                "filename": "moon1.jpg",
+                "caption": "We Choose The Moon Homepage"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/WeChooseTheMoon.mp4",
+                "alt": "",
+                "filename": "WeChooseTheMoon.mp4"
+              }
+            },
+            {
+              "$media": {
+                "url": "https://raw.githubusercontent.com/drkpxl/www.stevenhubert.com/v1-jekyll/source/videos/WCTM_Launch.mp4",
+                "alt": "",
+                "filename": "WCTM_Launch.mp4"
+              }
+            }
+          ]
+        },
+        "taxonomies": {
+          "category": [
+            "project-management",
+            "interactive-production"
+          ],
+          "tag": [
+            "award-winning",
+            "site-of-the-year",
+            "jfk",
+            "museum",
+            "flash",
+            "domaini-studios"
+          ]
+        }
+      }
+    ]
+  }
+}

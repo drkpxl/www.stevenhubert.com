@@ -3,13 +3,15 @@ import Base from '../layouts/Base.astro';
 ---
 <Base title="Not found" description="Page not found.">
   <section class="not-found">
-    <div class="container">
-      <p class="eyebrow">404</p>
-      <h1>Page not found</h1>
-      <p>
-        That URL doesn't lead anywhere. Head back to the
-        <a href="/">homepage</a> or browse the
-        <a href="/work/">work</a>.
+    <div class="inset">
+      <p class="code">404</p>
+      <h1 class="title">
+        <em>Off-piste.</em>
+      </h1>
+      <p class="body">
+        That URL doesn't lead anywhere on the property. Head back to the
+        <a href="/">homepage</a>, or browse the
+        <a href="/work/">index of work</a>.
       </p>
     </div>
   </section>
@@ -17,24 +19,47 @@ import Base from '../layouts/Base.astro';
 
 <style>
   .not-found {
-    padding-block: var(--space-9);
+    padding-block: clamp(var(--space-8), 12vw, var(--space-10));
   }
-  .container {
-    max-width: 40rem;
+  .inset {
+    max-width: var(--layout-max);
     margin-inline: auto;
-    padding-inline: var(--space-5);
-    text-align: center;
+    padding-inline: var(--layout-inset);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
   }
-  .eyebrow {
-    font-size: var(--type-2);
-    color: var(--color-fg-subtle);
+  .code {
+    font-family: var(--font-mono);
+    font-size: var(--type-micro);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: var(--space-4);
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--color-ink-soft);
   }
-  h1 {
-    font-size: var(--type-6);
-    margin-bottom: var(--space-5);
-    letter-spacing: -0.01em;
+  .title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--type-display);
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+    color: var(--color-ink);
+    max-width: 14ch;
+  }
+  .title em {
+    font-style: italic;
+  }
+  .body {
+    font-size: var(--type-lede);
+    line-height: var(--leading-snug);
+    color: var(--color-ink-soft);
+    max-width: var(--measure-narrow);
+  }
+  .body a {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--color-ink);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
   }
 </style>

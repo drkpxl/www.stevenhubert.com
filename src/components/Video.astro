@@ -5,8 +5,9 @@ interface Props {
   width?: number | string;
   height?: number | string;
   preload?: 'auto' | 'metadata' | 'none';
+  caption?: string;
 }
-const { src, poster, width, height, preload = 'metadata' } = Astro.props;
+const { src, poster, width, height, preload = 'metadata', caption } = Astro.props;
 ---
 <figure class="video">
   <video
@@ -20,17 +21,25 @@ const { src, poster, width, height, preload = 'metadata' } = Astro.props;
     <source src={src} type="video/mp4" />
     Your browser does not support the video tag.
   </video>
+  {caption && <figcaption>{caption}</figcaption>}
 </figure>
 
 <style>
   .video {
-    margin: var(--space-6, 2rem) 0;
+    margin: var(--space-7) 0;
   }
   .video video {
     width: 100%;
     height: auto;
     display: block;
-    background: var(--color-fg, #111);
-    border-radius: var(--radius-2, 4px);
+    background: var(--color-ink);
+  }
+  .video figcaption {
+    margin-top: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--type-micro);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--color-ink-soft);
   }
 </style>

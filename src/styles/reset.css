@@ -14,9 +14,9 @@ html {
 }
 
 body {
-  line-height: var(--leading-normal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 img,
@@ -43,9 +43,4 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
-}
-
-#root,
-#__next {
-  isolation: isolate;
 }

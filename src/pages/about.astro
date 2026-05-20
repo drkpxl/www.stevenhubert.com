@@ -3,40 +3,113 @@ import Base from '../layouts/Base.astro';
 ---
 <Base title="About" description="About Steven Hubert.">
   <section class="about">
-    <div class="container prose">
-      <h1>About</h1>
-      <p>
-        Digital experience leader who built Alterra Mountain Company's digital organization
-        from zero to 20+ professionals while driving $1B+ in annual ecommerce revenue.
-        Pioneered AI implementation across product and design workflows. Five-time Cannes
-        Gold winner with deep expertise in product strategy, design systems, and scaling
-        high-performance teams through complex transitions including IPOs and acquisitions.
-      </p>
-      <p>
-        This page is a placeholder while the real content is being rewritten. The best way
-        to get in touch is via
-        <a href="https://www.linkedin.com/in/stevenhubert/" rel="noopener" target="_blank">LinkedIn</a>.
-      </p>
+    <div class="inset">
+      <header class="head">
+        <p class="eyebrow">§ III — About</p>
+        <h1 class="title">
+          <em>Steven</em> Hubert.
+        </h1>
+      </header>
+
+      <div class="body">
+        <p class="lead">
+          Director of Digital Experience at Alterra Mountain Company.
+          I build the teams that ship the products sitting between a guest
+          and a mountain. Ikon Pass, mountain ecommerce, operations tools,
+          the apps the resorts run on.
+        </p>
+
+        <p>
+          Twenty years across agency and in-house work. Earlier stops at
+          Mondo Robot, Crispin Porter + Bogusky, and Domani Studios.
+          Five Cannes Gold lions across that span. Based in Denver.
+        </p>
+
+        <p>
+          The long version of the CV lives on
+          <a href="https://www.linkedin.com/in/stevenhubert/" rel="noopener" target="_blank">
+            LinkedIn ↗
+          </a>, which is also the best way to reach me.
+        </p>
+
+        <p class="placeholder">
+          A fuller about page is being written. For now: see the
+          <a href="/work/">work</a>.
+        </p>
+      </div>
     </div>
   </section>
 </Base>
 
 <style>
+  .inset {
+    max-width: var(--layout-max);
+    margin-inline: auto;
+    padding-inline: var(--layout-inset);
+  }
   .about {
-    padding-block: var(--space-8);
+    padding-block: clamp(var(--space-7), 7vw, var(--space-9)) var(--space-8);
   }
-  .container {
-    padding-inline: var(--space-5);
+  .head {
+    display: grid;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--color-ink);
+    max-width: 56rem;
   }
-  .container h1 {
-    font-size: var(--type-7);
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--type-micro);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--color-ink-soft);
+  }
+  .title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--type-h1);
     line-height: var(--leading-tight);
-    letter-spacing: -0.02em;
-    margin-bottom: var(--space-6);
+    letter-spacing: var(--tracking-display);
+    color: var(--color-ink);
   }
-  @media (max-width: 640px) {
-    .container h1 {
-      font-size: var(--type-6);
-    }
+  .title em {
+    font-style: italic;
+  }
+
+  .body {
+    max-width: var(--measure);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+  .body p {
+    font-size: var(--type-body);
+    line-height: var(--leading-loose);
+    color: var(--color-ink);
+  }
+  .body .lead {
+    font-family: var(--font-body);
+    font-size: var(--type-lede);
+    line-height: var(--leading-snug);
+    color: var(--color-ink);
+  }
+  .body a {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--color-rule-strong);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+  .body a:hover {
+    text-decoration-color: var(--color-ink);
+  }
+  .placeholder {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-rule);
+    font-family: var(--font-mono);
+    font-size: var(--type-small);
+    color: var(--color-ink-soft);
   }
 </style>

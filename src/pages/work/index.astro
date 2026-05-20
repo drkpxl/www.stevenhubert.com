@@ -4,73 +4,120 @@ import Base from '../../layouts/Base.astro';
 import WorkCard from '../../components/WorkCard.astro';
 
 const all = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
-
-const tiers: Array<{ key: '1' | '2'; label: string }> = [
-  { key: '1', label: 'Signature work' },
-  { key: '2', label: 'Selected work' },
-];
+const signature = all.filter((e) => e.data.tier === '1');
+const selected = all.filter((e) => e.data.tier === '2');
 ---
 <Base title="Work" description="Selected work by Steven Hubert.">
-  <section class="work-index">
-    <div class="container">
-      <header class="page-header">
-        <h1>Work</h1>
-        <p>A selection of projects spanning agency, in-house, and personal work.</p>
+  <section class="page">
+    <div class="inset">
+      <header class="page-head">
+        <p class="eyebrow">Index of Work</p>
+        <h1 class="title">
+          <em>Twenty years</em>, in selected fragments.
+        </h1>
+        <p class="standfirst">
+          A working index. Live products, archive pieces, agency campaigns,
+          and the occasional moonshot. Dateless on purpose.
+        </p>
       </header>
 
-      {tiers.map(({ key, label }) => {
-        const entries = all.filter((e) => e.data.tier === key);
-        if (entries.length === 0) return null;
-        return (
-          <section class="tier" data-tier={key}>
-            <h2>{label}</h2>
-            <div class="grid">
-              {entries.map((entry) => <WorkCard entry={entry} />)}
-            </div>
-          </section>
-        );
-      })}
+      {signature.length > 0 && (
+        <section class="tier" data-tier="1">
+          <h2 class="tier__title">Signature work.</h2>
+          <div class="grid grid--feature">
+            {signature.map((entry, i) => (
+              <WorkCard entry={entry} index={i} variant="feature" />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {selected.length > 0 && (
+        <section class="tier" data-tier="2">
+          <h2 class="tier__title">Selected work.</h2>
+          <div class="list">
+            {selected.map((entry, i) => (
+              <WorkCard entry={entry} index={i} variant="entry" />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   </section>
 </Base>
 
 <style>
-  .container {
-    max-width: 72rem;
+  .inset {
+    max-width: var(--layout-max);
     margin-inline: auto;
-    padding: var(--space-8) var(--space-5);
+    padding-inline: var(--layout-inset);
   }
-  .page-header {
-    margin-bottom: var(--space-8);
-  }
-  .page-header h1 {
-    font-size: var(--type-7);
-    letter-spacing: -0.02em;
-    line-height: var(--leading-tight);
-  }
-  .page-header p {
-    margin-top: var(--space-4);
-    color: var(--color-fg-muted);
-    font-size: var(--type-4);
-    max-width: var(--measure);
-  }
-  .tier {
-    margin-top: var(--space-8);
-  }
-  .tier h2 {
-    font-size: var(--type-5);
-    margin-bottom: var(--space-5);
-    letter-spacing: -0.01em;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
-    gap: var(--space-5);
+  .page {
+    padding-block: clamp(var(--space-7), 7vw, var(--space-9)) var(--space-8);
   }
 
-  @media (max-width: 640px) {
-    .page-header h1 {
-      font-size: var(--type-6);
+  .page-head {
+    display: grid;
+    gap: var(--space-4);
+    margin-bottom: var(--space-10);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--color-ink);
+    max-width: 56rem;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--type-micro);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--color-ink-soft);
+  }
+  .title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--type-h1);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-display);
+    color: var(--color-ink);
+  }
+  .title em { font-style: italic; }
+  .standfirst {
+    margin-top: var(--space-3);
+    font-size: var(--type-lede);
+    line-height: var(--leading-snug);
+    color: var(--color-ink-soft);
+    max-width: 48ch;
+  }
+
+  .tier + .tier {
+    margin-top: var(--space-10);
+  }
+  .tier__title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-display);
+    color: var(--color-ink);
+    margin-bottom: var(--space-7);
+  }
+
+  .grid--feature {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--space-7);
+    row-gap: var(--space-8);
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  @media (max-width: 880px) {
+    .grid--feature {
+      grid-template-columns: 1fr;
+      row-gap: var(--space-7);
     }
   }
 </style>

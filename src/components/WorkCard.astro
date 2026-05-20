@@ -3,77 +3,189 @@ import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   entry: CollectionEntry<'work'>;
+  index?: number;
+  variant?: 'feature' | 'entry';
 }
 
-const { entry } = Astro.props;
-const { title, client, excerpt, heroImage, externalUrl } = entry.data;
-const href = externalUrl ?? `/work/${entry.id}/`;
-const external = Boolean(externalUrl);
+const { entry, index, variant = 'feature' } = Astro.props;
+const { title, client, agency, excerpt, heroImage } = entry.data;
+const href = `/work/${entry.id}/`;
+const external = false;
+const indexLabel = typeof index === 'number' ? String(index + 1).padStart(2, '0') : null;
+const clientLine = client ? client + (agency && agency !== client ? ` · ${agency}` : '') : '';
+const arrow = '→';
 ---
-<a
-  class="work-card"
-  href={href}
-  data-tier={entry.data.tier}
-  data-featured={entry.data.featured ? '' : undefined}
-  rel={external ? 'noopener' : undefined}
-  target={external ? '_blank' : undefined}
->
-  {heroImage && (
-    <div class="thumb">
-      <img src={heroImage} alt="" loading="lazy" />
+{variant === 'entry' ? (
+  <a
+    class="card"
+    data-variant="entry"
+    data-tier={entry.data.tier}
+    href={href}
+    rel={external ? 'noopener' : undefined}
+    target={external ? '_blank' : undefined}
+  >
+    {indexLabel && <span class="entry__num">{indexLabel}</span>}
+    <h3 class="entry__title">{title}</h3>
+    <span class="entry__arrow" aria-hidden="true">{arrow}</span>
+  </a>
+) : (
+  <a
+    class="card"
+    data-variant="feature"
+    data-tier={entry.data.tier}
+    data-featured={entry.data.featured ? '' : undefined}
+    href={href}
+    rel={external ? 'noopener' : undefined}
+    target={external ? '_blank' : undefined}
+  >
+    {heroImage && (
+      <div class="thumb">
+        <img src={heroImage} alt="" loading="lazy" />
+      </div>
+    )}
+    <div class="meta">
+      <div class="meta__row">
+        {indexLabel && <span class="index">№ {indexLabel}</span>}
+        {clientLine && <span class="client">{clientLine}</span>}
+        <span class="goto" aria-hidden="true">{arrow}</span>
+      </div>
+      <h3 class="title">{title}</h3>
+      <p class="excerpt">{excerpt}</p>
     </div>
-  )}
-  <div class="meta">
-    {client && <p class="client">{client}</p>}
-    <h3>{title}</h3>
-    <p class="excerpt">{excerpt}</p>
-  </div>
-</a>
+  </a>
+)}
 
 <style>
-  .work-card {
-    display: block;
-    color: inherit;
+  /* Feature variant — homepage + Tier I grid (visual, image-led) */
+  .card[data-variant='feature'] {
+    display: grid;
+    gap: var(--space-4);
+    color: var(--color-ink);
     text-decoration: none;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-3);
-    overflow: hidden;
-    background: var(--color-bg-elev);
-    transition: transform 120ms ease, box-shadow 120ms ease;
-  }
-  .work-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-2);
   }
   .thumb {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
-    background: var(--color-border);
+    background: var(--color-paper-shade);
   }
   .thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: saturate(0.85);
+    transition: filter 320ms ease, transform 540ms cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+  .card[data-variant='feature']:hover .thumb img {
+    filter: saturate(1.05);
+    transform: scale(1.018);
   }
   .meta {
-    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
   }
-  .client {
-    font-size: var(--type-2);
-    color: var(--color-fg-subtle);
+  .meta__row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: var(--type-micro);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: var(--space-2);
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--color-ink-faint);
   }
-  h3 {
-    font-size: var(--type-4);
-    margin: 0;
-    line-height: var(--leading-snug);
+  .index { color: var(--color-ink); }
+  .client { flex: 1; }
+  .goto {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-ink);
+    transition: transform 240ms cubic-bezier(0.2, 0.6, 0.2, 1);
+  }
+  .card[data-variant='feature']:hover .goto {
+    transform: translateX(3px);
+  }
+  .title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-ink);
+    margin-top: var(--space-1);
+  }
+  .card[data-variant='feature']:hover .title {
+    text-decoration: underline;
+    text-decoration-color: var(--color-rule-strong);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
   }
   .excerpt {
-    margin-top: var(--space-3);
-    color: var(--color-fg-muted);
-    font-size: var(--type-2);
+    margin-top: var(--space-2);
+    font-size: var(--type-body);
     line-height: var(--leading-snug);
+    color: var(--color-ink-soft);
+    max-width: 38ch;
+  }
+
+  /* Entry variant — calm editorial table of contents */
+  .card[data-variant='entry'] {
+    display: grid;
+    grid-template-columns: 2.75rem minmax(0, 1fr) 1.25rem;
+    column-gap: var(--space-4);
+    align-items: baseline;
+    padding-block: var(--space-3) var(--space-3);
+    border-top: 1px solid var(--color-rule);
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  .entry__num {
+    font-family: var(--font-mono);
+    font-size: var(--type-small);
+    letter-spacing: var(--tracking-mono);
+    color: var(--color-ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .entry__title {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--type-body);
+    line-height: var(--leading-snug);
+    letter-spacing: 0;
+    color: var(--color-ink);
+    margin: 0;
+  }
+  .entry__arrow {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-ink-faint);
+    text-align: right;
+    transition: transform 240ms cubic-bezier(0.2, 0.6, 0.2, 1), color 180ms ease;
+  }
+  .card[data-variant='entry']:hover .entry__num,
+  .card[data-variant='entry']:hover .entry__arrow {
+    color: var(--color-ink);
+  }
+  .card[data-variant='entry']:hover .entry__arrow {
+    transform: translateX(4px);
+  }
+  .card[data-variant='entry']:hover .entry__title {
+    text-decoration: underline;
+    text-decoration-color: var(--color-ink);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+
+  @media (max-width: 600px) {
+    .card[data-variant='feature'] .title {
+      font-size: 1.75rem;
+    }
+    .card[data-variant='entry'] {
+      grid-template-columns: 2.25rem 1fr 1rem;
+      column-gap: var(--space-3);
+      padding-block: var(--space-3);
+    }
   }
 </style>

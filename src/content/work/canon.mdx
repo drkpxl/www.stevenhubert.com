@@ -6,7 +6,7 @@ tier: '1'
 featured: false
 order: 5
 heroImage: /images/canonnorthpolenov28.jpg
-excerpt: "I executive produced a real-time video compositing app for Canon at Mondo Robot. Kids drew their holiday wish, an AWS render farm composited it into a Santa video on demand."
+excerpt: "I executive produced a real-time video compositing app for Canon at Mondo Robot. Kids drew their holiday wish; an AWS render farm composited it into a Santa video on demand."
 categories: [Project Management, Interactive Production]
 tags: [grey, consumer goods, facebook app, canon]
 sourceDate: 2013-11-27
@@ -14,19 +14,13 @@ sourceDate: 2013-11-27
 
 import Video from '../../components/Video.astro';
 
-I executive produced this one at Mondo Robot. The brief was a real-time video compositing app for Canon: a child writes, draws, or picks images for their holiday wish, and a near-real-time render gives them back a sharable video of Santa receiving the wish on a Canon PIXMA printer at the North Pole.
+I executive produced this one at Mondo Robot for Canon. The brief was a real-time video compositing application: a child writes, draws, or picks images for their holiday wish, and a near-real-time render gives them back a sharable video of Santa receiving the wish on a Canon PIXMA printer at the North Pole.
 
 ![North Pole Pixma](/images/North-Pole-PIXMA-Image-Snow-Globe-Event.jpg)
 *Canon North Pole Pixma Start Page*
 
-The Facebook experience was fully responsive across desktop, tablet, and mobile, with custom creation tools to let kids draw, type, or assemble their wish from a set of preselected images. Most of the magic was speed. The wish had to render into a finished video fast enough that the user felt the moment of seeing it land in front of Santa.
-
-![Customize Screen](/images/PismaWishList.png)
-*Customize Screen*
+The Facebook experience was fully responsive across desktop, tablet, and mobile, with custom creation tools that let kids draw, type, or assemble their wish from a set of preselected images. Most of the magic was speed. The wish had to render into a finished video fast enough that the user felt the moment of seeing it land in front of Santa.
 
 <Video poster="/images/canon1.jpg" src="/videos/canon.mp4" />
 
-Under the hood, a fleet of AWS render servers ran custom C++ and FFMPEG code to composite the wish onto the video with believable shadow and highlight, then encode the result on demand for both desktop and mobile playback. It was a novel piece of infrastructure for the moment, and it held up under real holiday-season traffic.
-
-![Video Screen](/images/Canon_04.jpg)
-*Video Screen*
+Under the hood, a fleet of AWS render servers ran custom C++ and FFMPEG code to composite the wish onto the video with believable shadow and highlight, then encode the result on demand for both desktop and mobile playback. It was novel infrastructure for the moment, and it held up under real holiday-season traffic on a major consumer brand.

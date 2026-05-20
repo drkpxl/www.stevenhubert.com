@@ -12,53 +12,18 @@ tags: [Intrawest, Technology, Digital Strategy, Development]
 sourceDate: 2017-04-15
 ---
 
-CMH had been running on an aging Sitecore installation alongside the resort sites. It was the wrong tool for the company, and customers and CMH staff both felt it. Loading the list of available heli-trips could take full minutes. The information architecture had been forced into a shape designed for a ski resort, and the click data showed customers struggling to find what they were looking for.
+CMH had been running on an aging Sitecore installation alongside the resort sites. It was the wrong tool for the company, and customers and CMH staff both felt it; loading the list of available heli-trips could take full minutes. The information architecture had been forced into a shape designed for a ski resort, and the click data showed customers struggling to find what they were looking for.
 
-I led the discovery work with CMH and the agency team. We mapped the actual flows for two very different audiences, first-time heli-ski guests and seasoned returning fliers, and rebuilt the content hierarchy to serve both without compromising either.
+I led the discovery work with CMH and the agency team. We mapped flows for two very different audiences, first-time heli-ski guests and seasoned returning fliers, and rebuilt the content hierarchy to serve both without compromising either.
 
 ![CMH Home](/images/CMH/CMH-Home.png)
-*Homepage of new CMH website*
+*Homepage of the new CMH site*
 
 On the platform side I pushed for a [JAMstack](https://jamstack.org/) approach: [Contentful](https://www.contentful.com/) for the CMS, [Netlify](https://www.netlify.com/) for hosting and build, and [Jekyll](https://jekyllrb.com/) as the templating layer. The team had the technical depth to operate this stack, and the old monolith had taught us what we did not want to repeat.
 
-The trip grid took the longest piece of design work. It had to feel familiar to returning customers while being far more usable than what they were used to. Many iterations later it shipped working well.
-
 ![Booking Grid](/images/CMH/booking.png)
-*Sample of the new booking grid*
+*The trip booking grid, the longest piece of design work in the project*
 
-We also surfaced a hybrid weather feed at each lodge, mixing observed conditions from staff on the ground with automated station data. Customers got a clean read on what to expect, and the agency team got an easy integration point.
+The grid had to feel familiar to returning customers while being far more usable than what they were used to. We also surfaced a hybrid weather feed at each lodge, mixing observed conditions from staff on the ground with automated station data, so guests got a clean read on what to expect before they booked.
 
-#### Weather Reporting
-
-![Lodge Weather](/images/CMH/lodge-weather.png)
-*Lodge Weather*
-
-![Lodge Weather Details](/images/CMH/weather-detail.png)
-*Lodge Weather Details*
-
-**Sample JSON**
-
-```
-[{
-  "name": "Bobbie Burns",
-  "snowpack_depth": "400",
-  "air_temp_high": "8",
-  "air_temp_low": "-4",
-  "snowfall_yesterday": "5",
-  "snowfall_week": 67,
-  "atmospheric_conditions": "Scattered cloud. Moderate V wind.",
-  "timestamp": "2017-04-23T00:00:00.000-06:00"
-},
-{
-  "name": "Bugaboos",
-  "snowpack_depth": "350",
-  "air_temp_high": "6",
-  "air_temp_low": "-5",
-  "snowfall_yesterday": "15",
-  "snowfall_week": 82,
-  "atmospheric_conditions": "Snowing <1cm/hr. Light W wind.",
-  "timestamp": "2017-04-23T00:00:00.000-06:00"
-}]
-```
-
-The JAMstack choice let us do more on a smaller budget and ship a fast, responsive experience that finally matched what CMH is actually like to book. Both the CMH team and Intrawest leadership were happy with where it landed.
+The JAMstack choice let us do more on a smaller budget and ship a fast experience that finally matched what CMH is actually like to book.

@@ -4,24 +4,23 @@ const isActive = (href: string) => path === href || path.startsWith(href + '/');
 ---
 <header class="site-header">
   <div class="inset">
-    <a href="/" class="wordmark" aria-label="Steven Hubert — home">
-      <span class="wordmark__given">Steven</span>
-      <span class="wordmark__family">Hubert</span>
+    <a href="/" class="brand" aria-label="Steven Hubert — home">
+      <span class="brand__name">Steven Hubert</span>
+      <span class="brand__role">Digital Experience · Alterra</span>
     </a>
     <nav aria-label="Primary">
-      <a href="/work/" aria-current={isActive('/work') ? 'page' : undefined}>
-        <span>Work</span>
-      </a>
+      <a href="/work/" aria-current={isActive('/work') ? 'page' : undefined}>Work</a>
+      <a href="/about/" aria-current={isActive('/about') ? 'page' : undefined}>About</a>
       <a
         href="https://www.linkedin.com/in/stevenhubert/"
         rel="noopener"
         target="_blank"
       >
-        <span>LinkedIn</span>
-        <span class="external" aria-hidden="true">↗</span>
+        LinkedIn <span class="external" aria-hidden="true">↗</span>
       </a>
     </nav>
   </div>
+  <div class="rule rule--alpen"></div>
 </header>
 
 <style>
@@ -31,38 +30,37 @@ const isActive = (href: string) => path === href || path.startsWith(href + '/');
   }
   .inset {
     max-width: var(--layout-max);
-    margin-inline: auto;
-    padding: var(--space-5) var(--layout-inset);
+    margin: 0 auto;
+    padding: 18px var(--layout-inset);
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    gap: var(--space-6);
+    gap: 24px;
     flex-wrap: wrap;
   }
-  .wordmark {
-    color: var(--color-ink);
-    text-decoration: none;
+  .brand {
     display: inline-flex;
     align-items: baseline;
-    gap: 0.35em;
-    line-height: 1;
+    gap: 12px;
+    color: var(--color-ink);
+    text-decoration: none;
   }
-  .wordmark__given {
+  .brand__name {
     font-family: var(--font-display);
-    font-style: italic;
-    font-size: 1.55rem;
-    letter-spacing: var(--tracking-tight);
-  }
-  .wordmark__family {
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 1.05rem;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: var(--tracking-brand);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+  }
+  .brand__role {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--color-ink-soft);
   }
   nav {
     display: flex;
-    gap: var(--space-6);
+    gap: 24px;
     align-items: baseline;
   }
   nav a {
@@ -72,37 +70,25 @@ const isActive = (href: string) => path === href || path.startsWith(href + '/');
     letter-spacing: var(--tracking-eyebrow);
     color: var(--color-ink-soft);
     text-decoration: none;
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.35em;
+    transition: color 180ms ease;
   }
-  nav a:hover,
+  nav a:hover { color: var(--color-ink); }
   nav a[aria-current='page'] {
     color: var(--color-ink);
-  }
-  nav a[aria-current='page'] {
     text-decoration: underline;
-    text-decoration-color: var(--color-ink);
+    text-decoration-color: var(--color-alpen);
     text-underline-offset: 0.4em;
     text-decoration-thickness: 1px;
   }
   nav a .external {
     font-family: var(--font-body);
-    font-size: 0.9em;
+    font-size: 0.95em;
   }
 
   @media (max-width: 480px) {
-    .inset {
-      gap: var(--space-3);
-    }
-    .wordmark__given {
-      font-size: 1.35rem;
-    }
-    .wordmark__family {
-      font-size: 0.95rem;
-    }
-    nav {
-      gap: var(--space-5);
-    }
+    .inset { gap: 12px; }
+    .brand { flex-direction: column; gap: 4px; align-items: flex-start; }
+    .brand__role { font-size: 12px; }
+    nav { gap: 18px; }
   }
 </style>

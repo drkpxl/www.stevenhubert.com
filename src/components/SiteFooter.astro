@@ -3,83 +3,47 @@ const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
   <div class="inset">
-    <div class="col col--name">
-      <p class="label">Colophon</p>
-      <p class="body">
-        Set in <em>Instrument Serif</em> and Hanken Grotesk.
-        Hand-built in Astro, served from Cloudflare.
-      </p>
-    </div>
-    <div class="col col--contact">
-      <p class="label">Reach</p>
-      <p class="body">
-        <a href="https://www.linkedin.com/in/stevenhubert/" rel="noopener" target="_blank">
-          LinkedIn ↗
-        </a>
-      </p>
-    </div>
-    <div class="col col--mark">
-      <p class="label">©</p>
-      <p class="body">Steven Hubert, {year}.</p>
-    </div>
+    <span class="col">© Steven Hubert · {year}</span>
+    <span class="col col--place">Denver, CO · 1,609 m above sea</span>
+    <span class="col col--reach">
+      <a href="https://www.linkedin.com/in/stevenhubert/" rel="noopener" target="_blank">LinkedIn ↗</a>
+      &nbsp;&nbsp;
+      <a href="/work/">Index</a>
+    </span>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    border-top: 1px solid var(--color-rule);
     margin-top: var(--space-9);
-    padding: var(--space-7) 0 var(--space-6);
-    color: var(--color-ink-soft);
+    padding: 24px 0 28px;
+    border-top: 1px solid var(--color-rule);
   }
   .inset {
     max-width: var(--layout-max);
-    margin-inline: auto;
+    margin: 0 auto;
     padding-inline: var(--layout-inset);
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--space-6);
-    align-items: start;
-  }
-  .col {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-  .label {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
     font-family: var(--font-mono);
-    font-size: var(--type-micro);
-    text-transform: uppercase;
+    font-size: 11.5px;
     letter-spacing: var(--tracking-eyebrow);
-    color: var(--color-ink-faint);
-  }
-  .body {
-    font-family: var(--font-body);
-    font-size: var(--type-small);
-    line-height: var(--leading-snug);
     color: var(--color-ink-soft);
-    max-width: 32ch;
+    text-transform: uppercase;
   }
-  .body em {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 1.15em;
+  .col a {
+    color: var(--color-ink-soft);
+    border-bottom: 1px solid var(--color-ink-faint);
+    padding-bottom: 1px;
+    transition: color 180ms ease, border-bottom-color 180ms ease;
+  }
+  .col a:hover {
     color: var(--color-ink);
+    border-bottom-color: var(--color-alpen);
   }
-  .col--contact .body a {
-    color: var(--color-ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--color-rule-strong);
-    padding-bottom: 0.12em;
-  }
-  .col--contact .body a:hover {
-    border-bottom-color: var(--color-ink);
-  }
-
-  @media (max-width: 720px) {
-    .inset {
-      grid-template-columns: 1fr;
-      gap: var(--space-5);
-    }
+  @media (max-width: 600px) {
+    .inset { gap: 8px; flex-direction: column; align-items: flex-start; }
   }
 </style>

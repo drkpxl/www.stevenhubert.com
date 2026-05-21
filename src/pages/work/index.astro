@@ -5,25 +5,27 @@ import WorkCard from '../../components/WorkCard.astro';
 
 const all = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 const signature = all.filter((e) => e.data.tier === '1');
-const selected = all.filter((e) => e.data.tier === '2');
+const selected  = all.filter((e) => e.data.tier === '2');
 ---
 <Base title="Work" description="Selected work by Steven Hubert.">
   <section class="page">
     <div class="inset">
+
       <header class="page-head">
-        <p class="eyebrow">Index of Work</p>
-        <h1 class="title">
-          <em>Twenty years</em>, in selected fragments.
-        </h1>
+        <p class="eyebrow">Index of work</p>
+        <h1 class="title">All work.</h1>
         <p class="standfirst">
-          A working index. Live products, archive pieces, agency campaigns,
-          and the occasional moonshot. Dateless on purpose.
+          {all.length} entries. Live products, archive pieces, agency campaigns,
+          and personal projects. Dateless on purpose.
         </p>
       </header>
 
       {signature.length > 0 && (
-        <section class="tier" data-tier="1">
-          <h2 class="tier__title">Signature work.</h2>
+        <section class="tier">
+          <header class="tier__head">
+            <h2 class="tier__title">Signature work</h2>
+            <span class="tier__meta">{signature.length} entries</span>
+          </header>
           <div class="grid grid--feature">
             {signature.map((entry, i) => (
               <WorkCard entry={entry} index={i} variant="feature" />
@@ -33,15 +35,19 @@ const selected = all.filter((e) => e.data.tier === '2');
       )}
 
       {selected.length > 0 && (
-        <section class="tier" data-tier="2">
-          <h2 class="tier__title">Selected work.</h2>
-          <div class="list">
+        <section class="tier">
+          <header class="tier__head">
+            <h2 class="tier__title">Selected work</h2>
+            <span class="tier__meta">{selected.length} entries</span>
+          </header>
+          <nav class="list" aria-label="Selected work">
             {selected.map((entry, i) => (
-              <WorkCard entry={entry} index={i} variant="entry" />
+              <WorkCard entry={entry} index={signature.length + i} variant="entry" />
             ))}
-          </div>
+          </nav>
         </section>
       )}
+
     </div>
   </section>
 </Base>
@@ -49,19 +55,19 @@ const selected = all.filter((e) => e.data.tier === '2');
 <style>
   .inset {
     max-width: var(--layout-max);
-    margin-inline: auto;
+    margin: 0 auto;
     padding-inline: var(--layout-inset);
   }
   .page {
-    padding-block: clamp(var(--space-7), 7vw, var(--space-9)) var(--space-8);
+    padding-block: clamp(48px, 7vw, 96px) clamp(48px, 6vw, 80px);
   }
 
   .page-head {
     display: grid;
-    gap: var(--space-4);
-    margin-bottom: var(--space-10);
-    padding-bottom: var(--space-6);
-    border-bottom: 1px solid var(--color-ink);
+    gap: 14px;
+    margin-bottom: clamp(48px, 7vw, 80px);
+    padding-bottom: clamp(24px, 4vw, 36px);
+    border-bottom: 1px solid var(--color-rule-strong);
     max-width: 56rem;
   }
   .eyebrow {
@@ -73,51 +79,60 @@ const selected = all.filter((e) => e.data.tier === '2');
   }
   .title {
     font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 700;
     font-size: var(--type-h1);
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-display);
+    line-height: 1.02;
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
     color: var(--color-ink);
+    max-width: 18ch;
   }
-  .title em { font-style: italic; }
   .standfirst {
-    margin-top: var(--space-3);
+    margin-top: 4px;
     font-size: var(--type-lede);
-    line-height: var(--leading-snug);
+    line-height: 1.45;
     color: var(--color-ink-soft);
-    max-width: 48ch;
+    max-width: 56ch;
   }
 
-  .tier + .tier {
-    margin-top: var(--space-10);
+  .tier + .tier { margin-top: clamp(48px, 7vw, 80px); }
+
+  .tier__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-block: 18px;
+    border-top: 1px solid var(--color-rule-strong);
+    border-bottom: 1px solid var(--color-rule);
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: clamp(28px, 4vw, 44px);
   }
   .tier__title {
     font-family: var(--font-display);
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-display);
+    font-weight: 500;
+    font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+    letter-spacing: 0;
+    text-transform: none;
     color: var(--color-ink);
-    margin-bottom: var(--space-7);
+  }
+  .tier__meta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--color-ink-soft);
+    text-transform: uppercase;
   }
 
   .grid--feature {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: var(--space-7);
-    row-gap: var(--space-8);
+    column-gap: clamp(28px, 5vw, 64px);
+    row-gap: 56px;
   }
-  .list {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid var(--color-rule);
-  }
+  .list { display: flex; flex-direction: column; }
 
-  @media (max-width: 880px) {
-    .grid--feature {
-      grid-template-columns: 1fr;
-      row-gap: var(--space-7);
-    }
+  @media (max-width: 820px) {
+    .grid--feature { grid-template-columns: 1fr; row-gap: 48px; }
   }
 </style>

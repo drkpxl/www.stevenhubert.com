@@ -5,85 +5,93 @@
   font-size: var(--type-body);
   line-height: var(--leading-loose);
   color: var(--color-ink);
+  counter-reset: section;
 }
 
-.prose > * + * {
-  margin-top: var(--space-5);
-}
-
-.prose > p + p {
-  margin-top: var(--space-5);
-}
-
-.prose h2,
-.prose h3 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-style: italic;
-  line-height: var(--leading-tight);
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-ink);
-  margin-top: var(--space-8);
-}
+.prose > * + * { margin-top: var(--space-5); }
+.prose > p + p { margin-top: var(--space-5); }
 
 .prose h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
   font-size: var(--type-h2);
+  line-height: var(--leading-tight);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-ink);
+  margin-top: var(--space-8);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-rule);
+  counter-increment: section;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+}
+
+.prose h2::before {
+  content: counter(section, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: 0.55em;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--color-alpen);
+  font-variant-numeric: tabular-nums;
+  min-width: 2.4em;
 }
 
 .prose h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
   font-size: var(--type-h3);
+  line-height: var(--leading-tight);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-ink);
+  margin-top: var(--space-7);
 }
 
 .prose h2 + p,
-.prose h3 + p {
-  margin-top: var(--space-4);
-}
+.prose h3 + p { margin-top: var(--space-4); }
 
-.prose p {
-  font-size: var(--type-body);
-}
+.prose p { font-size: var(--type-body); }
+.prose strong { font-weight: 600; }
+.prose em { font-style: italic; }
 
-.prose strong {
-  font-weight: 600;
-}
-
-.prose em {
-  font-style: italic;
-}
-
-/* Markdown's `_caption_` pattern lands as a lone <em> after an <img>.
-   Treat those as captions; leave inline em as italic. */
+/* Markdown's `_caption_` pattern: a lone <em> directly after an <img>. Treat as caption. */
 .prose p > em:only-child {
   display: block;
-  font-family: var(--font-mono);
-  font-size: var(--type-micro);
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-eyebrow);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 13.5px;
+  line-height: 1.5;
   color: var(--color-ink-soft);
   text-align: left;
   margin-top: var(--space-3);
+  max-width: 56ch;
 }
 
-.prose figure {
-  margin: var(--space-7) 0;
-}
+.prose figure { margin: var(--space-7) 0; }
 
 .prose img {
   width: 100%;
   height: auto;
   margin-block: var(--space-7) var(--space-3);
+  border: 1px solid var(--color-rule);
+  background: var(--color-paper-shade);
 }
 
 .prose blockquote {
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: var(--type-h3);
+  font-weight: 500;
+  font-style: normal;
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
   line-height: var(--leading-tight);
   color: var(--color-ink);
-  padding: var(--space-5) 0 var(--space-5) var(--space-5);
-  border-inline-start: 1px solid var(--color-ink);
-  max-width: var(--measure-narrow);
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+  max-width: 38ch;
+  margin-block: var(--space-7);
 }
 
 .prose code {
@@ -116,9 +124,7 @@
   max-width: var(--measure);
 }
 
-.prose ul {
-  list-style: none;
-}
+.prose ul { list-style: none; }
 
 .prose ul > li {
   position: relative;
@@ -132,21 +138,16 @@
   top: 0.62em;
   width: 0.65em;
   height: 1px;
-  background: var(--color-ink);
+  background: var(--color-alpen);
 }
 
-.prose li + li {
-  margin-top: var(--space-3);
-}
+.prose li + li { margin-top: var(--space-3); }
 
 .prose a {
   color: var(--color-ink);
-  text-decoration: underline;
-  text-decoration-color: var(--color-rule-strong);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
+  border-bottom: 1px solid var(--color-alpen);
+  padding-bottom: 1px;
+  transition: color 180ms ease;
 }
 
-.prose a:hover {
-  text-decoration-color: var(--color-ink);
-}
+.prose a:hover { color: var(--color-alpen); }

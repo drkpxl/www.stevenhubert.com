@@ -1,12 +1,13 @@
 :root {
-  /* Bone + ink. No accent color — emphasis through type, weight, rules. */
-  --color-paper: #FBFAF6;
-  --color-paper-shade: #EDECE7;
-  --color-ink: #1B1B17;
-  --color-ink-soft: #46443D;
-  --color-ink-faint: #807D72;
-  --color-rule: rgba(27, 27, 23, 0.18);
-  --color-rule-strong: rgba(27, 27, 23, 0.55);
+  /* Palette — cool paper + slate ink. Alpine blue is the only accent. */
+  --color-paper:       #F4F6F8;
+  --color-paper-shade: #E6EAEE;
+  --color-ink:         #0E1620;
+  --color-ink-soft:    #4E5A66;
+  --color-ink-faint:   #8E9AA6;
+  --color-rule:        #C8D0D8;
+  --color-rule-strong: #0E1620;
+  --color-alpen:       #1F55B8;
 
   /* Spacing — editorial generosity at the top of the scale */
   --space-1: 0.25rem;
@@ -20,39 +21,40 @@
   --space-9: 8rem;
   --space-10: 12rem;
 
-  /* Type scale — keyed to editorial rhythm, not power-of-two */
-  --type-micro: 0.75rem;
-  --type-small: 0.875rem;
-  --type-body: 1.0625rem;
-  --type-lede: 1.375rem;
-  --type-h3: 1.75rem;
-  --type-h2: 2.375rem;
-  --type-h1: clamp(2.5rem, 5vw, 3.75rem);
-  --type-display: clamp(3.75rem, 9vw, 7rem);
+  /* Type scale */
+  --type-micro:   0.75rem;
+  --type-small:   0.875rem;
+  --type-body:    1.0625rem;
+  --type-lede:    clamp(1.05rem, 2vw, 1.25rem);
+  --type-h3:      1.25rem;
+  --type-h2:      clamp(1.5rem, 2.8vw, 1.85rem);
+  --type-h1:      clamp(2.5rem, 6vw, 4.5rem);
+  --type-display: clamp(3.25rem, 9vw, 7rem);
 
-  --leading-display: 0.92;
-  --leading-tight: 1.08;
-  --leading-snug: 1.25;
-  --leading-body: 1.55;
-  --leading-loose: 1.75;
+  --leading-display: 0.94;
+  --leading-tight:   1.15;
+  --leading-snug:    1.25;
+  --leading-body:    1.6;
+  --leading-loose:   1.7;
 
-  --tracking-eyebrow: 0.16em;
-  --tracking-mono: 0.04em;
-  --tracking-display: -0.02em;
-  --tracking-tight: -0.012em;
+  --tracking-eyebrow: 0.06em;
+  --tracking-mono:    0.05em;
+  --tracking-display: -0.01em;
+  --tracking-tight:   -0.005em;
+  --tracking-brand:   0.12em;
 
-  /* Type families — loaded via <link> in Base.astro */
-  --font-display: 'Instrument Serif', 'Iowan Old Style', 'Apple Garamond', Georgia, 'Times New Roman', serif;
-  --font-body: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  /* Type families */
+  --font-display: 'Archivo Narrow', 'Arial Narrow', system-ui, sans-serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
   /* Measure — line length governs reading comfort */
-  --measure: 62ch;
+  --measure:        62ch;
   --measure-narrow: 46ch;
-  --measure-wide: 78ch;
+  --measure-wide:   78ch;
 
   /* Layout */
-  --layout-max: 86rem;
-  --layout-text: 44rem;
-  --layout-inset: clamp(1.25rem, 5vw, 3.5rem);
+  --layout-max:   78rem;
+  --layout-text:  44rem;
+  --layout-inset: clamp(1.25rem, 4vw, 3rem);
 }

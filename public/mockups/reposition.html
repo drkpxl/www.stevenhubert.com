@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mountain Powder · Reposition mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=Inter:wght@400;500&family=Geist+Mono:wght@400;500&display=swap" />
+<style>
+  :root {
+    --bg:           #F4F6F8;
+    --ink:          #0E1620;
+    --ink-soft:     #4E5A66;
+    --ink-faint:    #8E9AA6;
+    --rule:         #C8D0D8;
+    --rule-strong:  #0E1620;
+    --alpen:        #1F55B8;
+    --inset:        clamp(1.25rem, 4vw, 3rem);
+    --measure:      64ch;
+    --max:          78rem;
+
+    --display: 'Archivo Narrow', 'Arial Narrow', system-ui, sans-serif;
+    --body:    'Inter', system-ui, -apple-system, sans-serif;
+    --mono:    'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: var(--bg); }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'kern', 'liga', 'calt';
+  }
+  a { color: inherit; text-decoration: none; }
+
+  :focus-visible {
+    outline: 2px solid var(--alpen);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+  ::selection {
+    background: var(--alpen);
+    color: var(--bg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+
+  .inset { max-width: var(--max); margin: 0 auto; padding-inline: var(--inset); }
+
+  /* --- Masthead ----------------------------------------------------- */
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+  }
+  .masthead .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 18px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .brand .role {
+    font-family: var(--body);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+  .coord {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+  .alpen-rule {
+    height: 2px;
+    background: var(--alpen);
+    width: 100%;
+  }
+
+  /* --- Index breadcrumb -------------------------------------------- */
+  .breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-block: 28px 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+  .breadcrumb a { border-bottom: 1px solid transparent; transition: border-color 180ms ease, color 180ms ease; }
+  .breadcrumb a:hover { color: var(--ink); border-bottom-color: var(--alpen); }
+  .breadcrumb .pos { color: var(--ink); }
+
+  /* --- Title block ------------------------------------------------- */
+  .title-block { padding-block: 40px 32px; }
+  h1.title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 0.96;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+    color: var(--ink);
+    max-width: 14ch;
+  }
+  .standfirst {
+    margin-top: 28px;
+    font-family: var(--body);
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.45;
+    color: var(--ink);
+    max-width: 48ch;
+    font-weight: 400;
+  }
+
+  /* --- Stats (editorial, no borders) ------------------------------- */
+  .stats {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(28px, 5vw, 64px);
+    row-gap: 36px;
+    max-width: 62ch;
+  }
+  .stat .n {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--alpen);
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  .stat .n .u {
+    font-size: 0.42em;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-left: 6px;
+  }
+  .stat .l {
+    margin-top: 14px;
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.05rem, 1.6vw, 1.125rem);
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .stat .d {
+    margin-top: 6px;
+    font-family: var(--body);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 30ch;
+  }
+
+  /* --- Hero plate -------------------------------------------------- */
+  .plate {
+    margin-top: 56px;
+    position: relative;
+  }
+  .plate img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--rule-strong);
+    background: #fff;
+  }
+  .plate .cap,
+  .inline-fig .cap {
+    margin-top: 14px;
+    display: block;
+    font-family: var(--body);
+    font-style: italic;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .plate .cap .ref,
+  .inline-fig .cap .ref {
+    font-family: var(--mono);
+    font-style: normal;
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    margin-right: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* --- Body / sections --------------------------------------------- */
+  .body {
+    margin-top: 64px;
+    max-width: var(--measure);
+  }
+  .section + .section { margin-top: 64px; }
+  h2.section__head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin: 0 0 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.5rem, 2.8vw, 1.85rem);
+    line-height: 1.15;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+  }
+  .section__num {
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 0.55em;
+    letter-spacing: 0.06em;
+    color: var(--alpen);
+    font-variant-numeric: tabular-nums;
+    min-width: 2.4em;
+  }
+  .section__name {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: inherit;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+  }
+  .section p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .section p + p { margin-top: 18px; }
+  .section .pull {
+    margin: 32px 0;
+    padding: 20px 0 22px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+    line-height: 1.25;
+    color: var(--ink);
+    text-transform: none;
+    max-width: 38ch;
+  }
+
+  .inline-fig {
+    margin: 36px 0;
+  }
+  .inline-fig img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--rule);
+    background: #fff;
+  }
+  .inline-fig .cap { margin-top: 12px; }
+
+  /* --- Footer ----------------------------------------------------- */
+  .foot {
+    margin-top: 72px;
+    padding: 24px 0 28px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+  .foot a { border-bottom: 1px solid var(--ink-faint); }
+  .foot a:hover { border-bottom-color: var(--alpen); color: var(--ink); }
+
+  /* --- Mobile ----------------------------------------------------- */
+  @media (max-width: 720px) {
+    .stats { grid-template-columns: 1fr; row-gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="inset row">
+    <a class="brand" href="/">
+      Steven Hubert
+      <span class="role">Digital Experience · Alterra</span>
+    </a>
+    <span class="coord">Denver, CO · 1,609 M above sea</span>
+  </div>
+  <div class="alpen-rule"></div>
+</header>
+
+<main>
+  <div class="inset">
+
+    <nav class="breadcrumb">
+      <a href="/work/">← Index of work</a>
+      <span class="pos">№ 03 / 26</span>
+    </nav>
+
+    <section class="title-block">
+      <h1 class="title">Mountain Powder</h1>
+      <p class="standfirst">
+        The snow, lift, and weather reporting spine I shipped for every Alterra resort.
+        One reporter-facing surface, a JSON backbone, an audit trail that holds up in court.
+      </p>
+
+      <div class="stats" aria-label="At a glance">
+        <div class="stat">
+          <div class="n">15</div>
+          <div class="l">Resorts run on it</div>
+          <p class="d">Six in 2017, fifteen in 2026. The daily ops dependency at every Alterra mountain.</p>
+        </div>
+        <div class="stat">
+          <div class="n">~30<span class="u">min/day</span></div>
+          <div class="l">Returned to each reporter</div>
+          <p class="d">Every morning, across every resort. The original problem the snow-reporting team brought to me.</p>
+        </div>
+        <div class="stat">
+          <div class="n">8<span class="u">yrs live</span></div>
+          <div class="l">In production</div>
+          <p class="d">One internal rebuild around the workflows reporters actually run today. Zero full replatforms.</p>
+        </div>
+        <div class="stat">
+          <div class="n">6<span class="u">surfaces</span></div>
+          <div class="l">Downstream from one JSON spine</div>
+          <p class="d">Web, email, lodge signage, an Alexa skill, the SMS alert channel, and the resort ops panel.</p>
+        </div>
+      </div>
+    </section>
+
+    <figure class="plate">
+      <img src="/images/QTA/signage.png" alt="Lodge signage driven by the Mountain Powder JSON spine" />
+      <figcaption class="cap">
+        <span class="ref">Fig 01.</span> Lodge signage driven by the JSON spine. Alterra, ’20.
+      </figcaption>
+    </figure>
+
+    <div class="body">
+
+      <article class="section">
+        <h2 class="section__head">
+          <span class="section__num">01</span>
+          <span class="section__name">Origin</span>
+        </h2>
+        <p>
+          Mountain Powder grew out of a problem the snow-reporting team brought to me.
+          Every morning, reporters across six resorts logged into multiple systems to
+          update conditions for the website, the email, the trail signs, and a half-dozen
+          other surfaces. The data lived in too many places, and most of the tooling only
+          worked on a narrow set of desktop browsers.
+        </p>
+        <p>
+          I led the product end-to-end. The pitch was one responsive admin panel as the
+          single source of truth for snow, lift, trail, activity, and weather data, with
+          that data piped out everywhere. The harder problem turned out to be getting six
+          resorts to agree on a shared vocabulary, not the interface itself.
+        </p>
+
+        <figure class="inline-fig">
+          <img src="/images/QTA/Screenshot 2017-05-05 10.15.55.png" alt="Snow reporting view, tablet optimized" />
+          <figcaption class="cap"><span class="ref">Fig 02.</span> Snow-reporting view, tablet-optimized for use at the base of the mountain.</figcaption>
+        </figure>
+      </article>
+
+      <article class="section">
+        <h2 class="section__head">
+          <span class="section__num">02</span>
+          <span class="section__name">The override layer</span>
+        </h2>
+        <p>
+          Reporters override the live weather feed when reality on the mountain disagrees
+          with the sensors. Stations freeze with rime ice and report 32° in a storm when
+          it’s actually -10°; an anemometer seizes and reads 0 mph during an 80 mph gust;
+          an animal cuts the feed. The override is what lets reporters keep guests
+          accurate while the hardware catches up.
+        </p>
+
+        <p class="pull">
+          Every override and edit writes to an audit log. Before Mountain Powder, each
+          change was printed and filed in a cabinet so legal could prove what had been published when.
+        </p>
+
+        <figure class="inline-fig">
+          <img src="/images/QTA/Screenshot 2017-05-05 10.38.27.png" alt="Override panel with audit logging" />
+          <figcaption class="cap"><span class="ref">Fig 03.</span> Override options, with full audit logging on every edit.</figcaption>
+        </figure>
+      </article>
+
+      <article class="section">
+        <h2 class="section__head">
+          <span class="section__num">03</span>
+          <span class="section__name">The spine</span>
+        </h2>
+        <p>
+          The same JSON spine drives the customer-facing operations panel at each resort,
+          the daily snow-report email through IBM Watson Marketing Cloud, the digital
+          signage in the lodges, and a custom Alexa skill for resort conditions.
+        </p>
+      </article>
+
+      <article class="section">
+        <h2 class="section__head">
+          <span class="section__num">04</span>
+          <span class="section__name">Text alerts</span>
+        </h2>
+        <p>
+          The last layer is a text-alert signup. Pass holders pick thresholds and get a
+          one-way message when one trips. I worked with legal to wall this list off from
+          every other marketing surface we operate; numbers entered here never get
+          marketed to, and the channel has held its integrity every season since.
+        </p>
+
+        <figure class="inline-fig">
+          <img src="/images/QTA/Screenshot 2017-05-05.png" alt="Text alert signup interface" />
+          <figcaption class="cap"><span class="ref">Fig 04.</span> Text-alert signup at alerts.quicktrax.com.</figcaption>
+        </figure>
+      </article>
+
+      <article class="section">
+        <h2 class="section__head">
+          <span class="section__num">05</span>
+          <span class="section__name">What it became</span>
+        </h2>
+        <p>
+          Mountain Powder started as a tool to give a reporter back half an hour every
+          morning. It became the data spine that feeds almost every customer-facing surface
+          at every Alterra resort.
+        </p>
+      </article>
+
+    </div><!-- /.body -->
+
+    <footer class="foot">
+      <span>© Steven Hubert · 2026</span>
+      <span>
+        <a href="https://www.linkedin.com/in/stevenhubert/">LinkedIn ↗</a>
+        &nbsp;&nbsp;
+        <a href="/work/">Index</a>
+      </span>
+    </footer>
+
+  </div>
+</main>
+
+</body>
+</html>

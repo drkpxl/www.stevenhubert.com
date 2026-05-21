@@ -18,6 +18,16 @@ const work = defineCollection({
     awards: z.array(z.string()).optional(),
     externalUrl: z.string().url().optional(),
     sourceDate: z.coerce.date().optional(),
+    stats: z
+      .array(
+        z.object({
+          n: z.string(),
+          u: z.string().optional(),
+          l: z.string(),
+          d: z.string().optional(),
+        }),
+      )
+      .optional(),
   }),
 });
 

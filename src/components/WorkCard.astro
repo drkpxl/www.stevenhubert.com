@@ -8,184 +8,157 @@ interface Props {
 }
 
 const { entry, index, variant = 'feature' } = Astro.props;
-const { title, client, agency, excerpt, heroImage } = entry.data;
+const { title, client, excerpt, heroImage } = entry.data;
 const href = `/work/${entry.id}/`;
-const external = false;
 const indexLabel = typeof index === 'number' ? String(index + 1).padStart(2, '0') : null;
-const clientLine = client ? client + (agency && agency !== client ? ` · ${agency}` : '') : '';
-const arrow = '→';
 ---
 {variant === 'entry' ? (
-  <a
-    class="card"
-    data-variant="entry"
-    data-tier={entry.data.tier}
-    href={href}
-    rel={external ? 'noopener' : undefined}
-    target={external ? '_blank' : undefined}
-  >
-    {indexLabel && <span class="entry__num">{indexLabel}</span>}
-    <h3 class="entry__title">{title}</h3>
-    <span class="entry__arrow" aria-hidden="true">{arrow}</span>
+  <a class="entry" href={href}>
+    {indexLabel && <span class="entry__num">№ {indexLabel}</span>}
+    <div class="entry__body">
+      <h3 class="entry__title">{title}</h3>
+      {excerpt && <p class="entry__excerpt">{excerpt}</p>}
+    </div>
+    <span class="entry__arrow" aria-hidden="true">→</span>
   </a>
 ) : (
-  <a
-    class="card"
-    data-variant="feature"
-    data-tier={entry.data.tier}
-    data-featured={entry.data.featured ? '' : undefined}
-    href={href}
-    rel={external ? 'noopener' : undefined}
-    target={external ? '_blank' : undefined}
-  >
+  <a class="feature" href={href}>
     {heroImage && (
-      <div class="thumb">
+      <div class="feature__thumb">
         <img src={heroImage} alt="" loading="lazy" />
       </div>
     )}
-    <div class="meta">
-      <div class="meta__row">
-        {indexLabel && <span class="index">№ {indexLabel}</span>}
-        {clientLine && <span class="client">{clientLine}</span>}
-        <span class="goto" aria-hidden="true">{arrow}</span>
+    <div class="feature__meta">
+      <div class="feature__row">
+        {indexLabel && <span class="feature__num">№ {indexLabel}</span>}
+        {client && <span class="feature__client">{client}</span>}
       </div>
-      <h3 class="title">{title}</h3>
-      <p class="excerpt">{excerpt}</p>
+      <h3 class="feature__title">{title}</h3>
+      {excerpt && <p class="feature__excerpt">{excerpt}</p>}
     </div>
   </a>
 )}
 
 <style>
-  /* Feature variant — homepage + Tier I grid (visual, image-led) */
-  .card[data-variant='feature'] {
+  /* Feature variant — grid card with image */
+  .feature {
     display: grid;
-    gap: var(--space-4);
+    gap: 16px;
     color: var(--color-ink);
     text-decoration: none;
   }
-  .thumb {
+  .feature__thumb {
     aspect-ratio: 4 / 3;
     overflow: hidden;
     background: var(--color-paper-shade);
+    border: 1px solid var(--color-rule);
   }
-  .thumb img {
+  .feature__thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: saturate(0.85);
-    transition: filter 320ms ease, transform 540ms cubic-bezier(0.2, 0.6, 0.2, 1);
+    transition: transform 540ms cubic-bezier(0.2, 0.6, 0.2, 1);
   }
-  .card[data-variant='feature']:hover .thumb img {
-    filter: saturate(1.05);
-    transform: scale(1.018);
-  }
-  .meta {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-  .meta__row {
+  .feature:hover .feature__thumb img { transform: scale(1.012); }
+
+  .feature__row {
     display: flex;
     align-items: baseline;
-    gap: var(--space-3);
+    gap: 12px;
     font-family: var(--font-mono);
     font-size: var(--type-micro);
     text-transform: uppercase;
     letter-spacing: var(--tracking-eyebrow);
     color: var(--color-ink-faint);
-  }
-  .index { color: var(--color-ink); }
-  .client { flex: 1; }
-  .goto {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--color-ink);
-    transition: transform 240ms cubic-bezier(0.2, 0.6, 0.2, 1);
-  }
-  .card[data-variant='feature']:hover .goto {
-    transform: translateX(3px);
-  }
-  .title {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 2rem;
-    line-height: var(--leading-tight);
-    letter-spacing: var(--tracking-tight);
-    color: var(--color-ink);
-    margin-top: var(--space-1);
-  }
-  .card[data-variant='feature']:hover .title {
-    text-decoration: underline;
-    text-decoration-color: var(--color-rule-strong);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.16em;
-  }
-  .excerpt {
-    margin-top: var(--space-2);
-    font-size: var(--type-body);
-    line-height: var(--leading-snug);
-    color: var(--color-ink-soft);
-    max-width: 38ch;
-  }
-
-  /* Entry variant — calm editorial table of contents */
-  .card[data-variant='entry'] {
-    display: grid;
-    grid-template-columns: 2.75rem minmax(0, 1fr) 1.25rem;
-    column-gap: var(--space-4);
-    align-items: baseline;
-    padding-block: var(--space-3) var(--space-3);
-    border-top: 1px solid var(--color-rule);
-    color: var(--color-ink);
-    text-decoration: none;
-  }
-  .entry__num {
-    font-family: var(--font-mono);
-    font-size: var(--type-small);
-    letter-spacing: var(--tracking-mono);
-    color: var(--color-ink-faint);
     font-variant-numeric: tabular-nums;
   }
-  .entry__title {
-    font-family: var(--font-body);
-    font-style: normal;
-    font-weight: 400;
-    font-size: var(--type-body);
-    line-height: var(--leading-snug);
-    letter-spacing: 0;
+  .feature__num { color: var(--color-alpen); }
+  .feature__client { color: var(--color-ink-soft); }
+
+  .feature__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2.4vw, 1.85rem);
+    line-height: 1.1;
+    letter-spacing: var(--tracking-tight);
+    text-transform: uppercase;
     color: var(--color-ink);
-    margin: 0;
+    margin-top: 4px;
+    transition: color 180ms ease;
+  }
+  .feature:hover .feature__title { color: var(--color-alpen); }
+
+  .feature__excerpt {
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--color-ink-soft);
+    max-width: 42ch;
+  }
+
+  /* Entry variant — numbered list row */
+  .entry {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr) 1.5rem;
+    column-gap: 24px;
+    align-items: baseline;
+    padding-block: 22px;
+    border-bottom: 1px solid var(--color-rule);
+    color: var(--color-ink);
+    text-decoration: none;
+    transition: background 180ms ease;
+  }
+  .entry:hover { background: rgba(31, 85, 184, 0.03); }
+
+  .entry__num {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--color-alpen);
+    font-variant-numeric: tabular-nums;
+  }
+  .entry__body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .entry__title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.35rem, 2.6vw, 1.65rem);
+    line-height: 1.15;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-ink);
+  }
+  .entry:hover .entry__title {
+    text-decoration: underline;
+    text-decoration-color: var(--color-alpen);
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 1px;
+  }
+  .entry__excerpt {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--color-ink-soft);
+    max-width: 64ch;
   }
   .entry__arrow {
-    font-family: var(--font-body);
-    font-size: 1rem;
     color: var(--color-ink-faint);
+    font-family: var(--font-mono);
     text-align: right;
-    transition: transform 240ms cubic-bezier(0.2, 0.6, 0.2, 1), color 180ms ease;
+    transition: transform 240ms ease, color 180ms ease;
   }
-  .card[data-variant='entry']:hover .entry__num,
-  .card[data-variant='entry']:hover .entry__arrow {
-    color: var(--color-ink);
-  }
-  .card[data-variant='entry']:hover .entry__arrow {
+  .entry:hover .entry__arrow {
+    color: var(--color-alpen);
     transform: translateX(4px);
-  }
-  .card[data-variant='entry']:hover .entry__title {
-    text-decoration: underline;
-    text-decoration-color: var(--color-ink);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
   }
 
   @media (max-width: 600px) {
-    .card[data-variant='feature'] .title {
-      font-size: 1.75rem;
-    }
-    .card[data-variant='entry'] {
-      grid-template-columns: 2.25rem 1fr 1rem;
-      column-gap: var(--space-3);
-      padding-block: var(--space-3);
+    .entry {
+      grid-template-columns: 2.25rem 1fr 1.25rem;
+      column-gap: 14px;
+      padding-block: 18px;
     }
   }
 </style>

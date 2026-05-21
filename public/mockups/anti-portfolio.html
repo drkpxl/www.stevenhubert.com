@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mountain Powder - VP portfolio mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Geist+Mono:wght@400;500;700&family=Inter:wght@400;500;650;750&display=swap" />
+<style>
+  :root {
+    --bg: #f7f6f1;
+    --paper: #fffdf6;
+    --ink: #171713;
+    --soft: #56584f;
+    --faint: #8e9286;
+    --line: #c9c9bd;
+    --line-strong: #171713;
+    --signal: #c94f24;
+    --moss: #39684f;
+    --water: #3d6f99;
+    --sun: #e0b93f;
+    --display: "Archivo Narrow", "Arial Narrow", system-ui, sans-serif;
+    --body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --max: 1180px;
+    --inset: 24px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--bg);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.58;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .shell {
+    width: min(100%, var(--max));
+    margin: 0 auto;
+    padding-inline: var(--inset);
+  }
+
+  .top {
+    border-bottom: 1px solid var(--line-strong);
+    background: var(--paper);
+  }
+
+  .top__inner {
+    min-height: 58px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 18px;
+    align-items: center;
+  }
+
+  .identity {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .identity b {
+    font-weight: 700;
+  }
+
+  .identity span {
+    color: var(--soft);
+  }
+
+  .top nav {
+    display: flex;
+    gap: 14px;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  .top nav a {
+    border-bottom: 1px solid transparent;
+  }
+
+  .top nav a:hover {
+    border-bottom-color: var(--ink);
+  }
+
+  .hero {
+    padding-block: 42px 30px;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) 380px;
+    gap: 42px;
+    align-items: start;
+  }
+
+  .eyebrow {
+    margin: 0 0 18px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--soft);
+  }
+
+  h1 {
+    margin: 0;
+    font-family: var(--display);
+    font-size: 68px;
+    line-height: 0.9;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .subhead {
+    max-width: 46rem;
+    margin: 22px 0 0;
+    font-size: 24px;
+    line-height: 1.28;
+    font-weight: 650;
+  }
+
+  .subhead span {
+    color: var(--signal);
+  }
+
+  .brief {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--line-strong);
+    border-left: 1px solid var(--line-strong);
+  }
+
+  .brief__item {
+    min-height: 112px;
+    padding: 13px;
+    border-right: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+    background: rgba(255, 253, 246, 0.7);
+  }
+
+  .brief__label {
+    display: block;
+    margin-bottom: 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--soft);
+  }
+
+  .brief__value {
+    display: block;
+    max-width: 18ch;
+    font-size: 15px;
+    line-height: 1.28;
+    font-weight: 650;
+  }
+
+  .readout {
+    border: 1px solid var(--line-strong);
+    background: var(--paper);
+  }
+
+  .readout__head {
+    padding: 13px 14px;
+    border-bottom: 1px solid var(--line-strong);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  .readout__body {
+    padding: 14px;
+  }
+
+  .readout h2 {
+    margin: 0;
+    font-family: var(--display);
+    font-size: 34px;
+    line-height: 0.96;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .readout p {
+    margin: 16px 0 0;
+    color: var(--soft);
+    font-size: 15px;
+    line-height: 1.52;
+  }
+
+  .readout__rows {
+    display: grid;
+    margin-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+
+  .readout__row {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 12px;
+    padding-block: 11px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .readout__row b {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--signal);
+  }
+
+  .readout__row span {
+    font-size: 14px;
+    line-height: 1.42;
+  }
+
+  .section {
+    padding-block: 58px;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .section__header {
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 34px;
+    margin-bottom: 34px;
+  }
+
+  .kicker {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--soft);
+  }
+
+  .section h2 {
+    margin: 0;
+    max-width: 16ch;
+    font-family: var(--display);
+    font-size: 46px;
+    line-height: 0.96;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .section__lede {
+    max-width: 58rem;
+    margin: 18px 0 0;
+    color: var(--soft);
+    font-size: 19px;
+    line-height: 1.45;
+  }
+
+  .decision-table {
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .decision-row {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 0.95fr) minmax(0, 1.1fr) minmax(0, 0.95fr);
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .decision-row > div {
+    padding: 16px 15px 18px;
+    border-right: 1px solid var(--line);
+  }
+
+  .decision-row > div:last-child {
+    border-right: 0;
+  }
+
+  .decision-row--head {
+    min-height: 42px;
+    background: var(--paper);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--soft);
+  }
+
+  .decision-row--head > div {
+    padding-block: 11px;
+  }
+
+  .decision-row h3 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .decision-row p {
+    margin: 0;
+    color: var(--soft);
+    font-size: 15px;
+    line-height: 1.48;
+  }
+
+  .operating-model {
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.28fr) minmax(0, 0.96fr);
+    gap: 16px;
+  }
+
+  .model-column {
+    border: 1px solid var(--line-strong);
+    background: var(--paper);
+    min-height: 380px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .model-column__top {
+    padding: 13px;
+    border-bottom: 1px solid var(--line-strong);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--soft);
+  }
+
+  .model-column__title {
+    align-self: center;
+    padding: 22px;
+  }
+
+  .model-column__title h3 {
+    margin: 0;
+    font-family: var(--display);
+    font-size: 38px;
+    line-height: 0.98;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .model-column__title p {
+    margin: 14px 0 0;
+    color: var(--soft);
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .model-column__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+  }
+
+  .model-column__list li {
+    padding: 10px 13px;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  .model-column--core {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .model-column--core .model-column__top,
+  .model-column--core .model-column__title p {
+    color: rgba(255, 253, 246, 0.72);
+  }
+
+  .model-column--core .model-column__list,
+  .model-column--core .model-column__list li,
+  .model-column--core .model-column__top {
+    border-color: rgba(255, 253, 246, 0.24);
+  }
+
+  .evidence {
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    gap: 32px;
+    align-items: start;
+  }
+
+  .evidence-copy {
+    display: grid;
+    gap: 18px;
+  }
+
+  .evidence-copy p {
+    margin: 0;
+    color: var(--soft);
+    font-size: 17px;
+  }
+
+  .proof-list {
+    margin: 4px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .proof-list li {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 14px;
+    padding-block: 13px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .proof-list b {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--moss);
+  }
+
+  .proof-list span {
+    color: var(--soft);
+    font-size: 15px;
+    line-height: 1.42;
+  }
+
+  .screens {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  .shot {
+    border: 1px solid var(--line-strong);
+    background: var(--paper);
+    padding: 10px;
+  }
+
+  .shot img {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: white;
+  }
+
+  .shot figcaption {
+    margin-top: 9px;
+    font-family: var(--mono);
+    font-size: 11px;
+    line-height: 1.35;
+    color: var(--soft);
+  }
+
+  .shot--offset {
+    margin-top: 62px;
+  }
+
+  .outcomes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--line-strong);
+    border-left: 1px solid var(--line-strong);
+  }
+
+  .outcome {
+    min-height: 210px;
+    padding: 15px;
+    border-right: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+    display: grid;
+    align-content: space-between;
+    background: var(--paper);
+  }
+
+  .outcome b {
+    display: block;
+    font-family: var(--display);
+    font-size: 42px;
+    line-height: 0.95;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .outcome:nth-child(2) b {
+    color: var(--water);
+  }
+
+  .outcome:nth-child(3) b {
+    color: var(--signal);
+  }
+
+  .outcome:nth-child(4) b {
+    color: var(--moss);
+  }
+
+  .outcome span {
+    display: block;
+    margin-top: 22px;
+    color: var(--soft);
+    font-size: 15px;
+    line-height: 1.42;
+  }
+
+  .closing {
+    padding-block: 54px 26px;
+  }
+
+  .closing__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 42px;
+    align-items: end;
+  }
+
+  .closing h2 {
+    margin: 0;
+    max-width: 13ch;
+    font-family: var(--display);
+    font-size: 54px;
+    line-height: 0.94;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .closing p {
+    max-width: 48rem;
+    margin: 18px 0 0;
+    color: var(--soft);
+    font-size: 18px;
+  }
+
+  .adjacent {
+    display: grid;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  .adjacent a {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .adjacent span {
+    color: var(--soft);
+  }
+
+  .foot {
+    padding-block: 22px 30px;
+    border-top: 1px solid var(--line-strong);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--soft);
+  }
+
+  .foot__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 980px) {
+    .hero__grid,
+    .section__header,
+    .evidence,
+    .closing__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .brief,
+    .outcomes {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .decision-row {
+      grid-template-columns: 150px minmax(0, 1fr);
+    }
+
+    .decision-row--head {
+      display: none;
+    }
+
+    .decision-row > div {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .decision-row > div:nth-child(2),
+    .decision-row > div:nth-child(4) {
+      border-right: 0;
+    }
+
+    .operating-model {
+      grid-template-columns: 1fr;
+    }
+
+    .model-column {
+      min-height: 280px;
+    }
+  }
+
+  @media (max-width: 660px) {
+    :root {
+      --inset: 16px;
+    }
+
+    .top__inner {
+      grid-template-columns: 1fr;
+      padding-block: 14px;
+    }
+
+    h1 {
+      font-size: 46px;
+    }
+
+    .subhead {
+      font-size: 19px;
+    }
+
+    .brief,
+    .outcomes,
+    .screens,
+    .decision-row,
+    .proof-list li,
+    .adjacent a {
+      grid-template-columns: 1fr;
+    }
+
+    .decision-row > div {
+      border-right: 0;
+    }
+
+    .section {
+      padding-block: 42px;
+    }
+
+    .section h2,
+    .closing h2 {
+      font-size: 36px;
+    }
+
+    .model-column__title h3 {
+      font-size: 32px;
+    }
+
+    .shot--offset {
+      margin-top: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="shell top__inner">
+    <a class="identity" href="/">
+      <b>Steven Hubert</b>
+      <span>digital experience leadership / product systems / Denver</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="/work/">Work</a>
+      <a href="https://www.linkedin.com/in/stevenhubert/">LinkedIn</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="shell hero__grid">
+      <div>
+        <p class="eyebrow">Executive case note / portfolio operating system</p>
+        <h1>Mountain Powder</h1>
+        <p class="subhead">
+          I turned fragmented resort condition reporting into a shared operating layer for Alterra.
+          <span>The design work was not a screen. It was the system of decisions around it.</span>
+        </p>
+
+        <div class="brief" aria-label="Project summary">
+          <div class="brief__item">
+            <span class="brief__label">Role</span>
+            <span class="brief__value">Conceived, led, shipped, and evolved</span>
+          </div>
+          <div class="brief__item">
+            <span class="brief__label">Scope</span>
+            <span class="brief__value">Product strategy, UX, data model, ops tooling</span>
+          </div>
+          <div class="brief__item">
+            <span class="brief__label">Business surface</span>
+            <span class="brief__value">Every resort condition channel</span>
+          </div>
+          <div class="brief__item">
+            <span class="brief__label">Operating value</span>
+            <span class="brief__value">Fewer tools, cleaner data, auditable truth</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="readout" aria-label="Leadership readout">
+        <div class="readout__head">
+          <span>Leadership readout</span>
+          <span>2017-present</span>
+        </div>
+        <div class="readout__body">
+          <h2>Portfolio leverage, not feature polish.</h2>
+          <p>
+            Mountain Powder matters because it changed how operational data moves through
+            a multi-resort company. It gave teams one vocabulary, one publishing path,
+            and one accountable record of what guests saw.
+          </p>
+          <div class="readout__rows">
+            <div class="readout__row">
+              <b>Problem</b>
+              <span>Reporters were re-entering condition data across disconnected tools.</span>
+            </div>
+            <div class="readout__row">
+              <b>Decision</b>
+              <span>Make reporting the source of truth, then push structured data downstream.</span>
+            </div>
+            <div class="readout__row">
+              <b>Result</b>
+              <span>A daily operational dependency that kept expanding instead of being replaced.</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <header class="section__header">
+        <p class="kicker">01 / VP lens</p>
+        <div>
+          <h2>The value was in the operating choices.</h2>
+          <p class="section__lede">
+            The interface mattered, but the durable work was alignment, governance,
+            exception handling, and trust boundaries across teams. Those choices turned
+            a resort-by-resort reporting problem into a company operating layer.
+          </p>
+        </div>
+      </header>
+
+      <div class="decision-table" aria-label="Key product leadership decisions">
+        <div class="decision-row decision-row--head">
+          <div>Leadership area</div>
+          <div>Decision</div>
+          <div>Why it mattered</div>
+          <div>What changed</div>
+        </div>
+        <div class="decision-row">
+          <div><h3>Shared vocabulary</h3></div>
+          <div><p>Get resorts onto common definitions for snow, lifts, trails, activities, and weather.</p></div>
+          <div><p>The hard problem was not the form. It was making six operational cultures publish comparable data.</p></div>
+          <div><p>One schema could feed many guest surfaces without each resort becoming a special case.</p></div>
+        </div>
+        <div class="decision-row">
+          <div><h3>Exception design</h3></div>
+          <div><p>Treat manual overrides as first-class workflow, not a workaround.</p></div>
+          <div><p>Mountain sensors fail in exactly the moments guests care about: storms, ice, wind, and outages.</p></div>
+          <div><p>Reporters could correct reality while preserving the machine feed and the reason for the edit.</p></div>
+        </div>
+        <div class="decision-row">
+          <div><h3>Governance</h3></div>
+          <div><p>Record every edit and override in an audit trail.</p></div>
+          <div><p>Legal needed proof of what had been published and when, without printed binders.</p></div>
+          <div><p>The system became safer to operate because accountability was built into the product.</p></div>
+        </div>
+        <div class="decision-row">
+          <div><h3>Channel trust</h3></div>
+          <div><p>Wall SMS alerts off from the broader marketing list.</p></div>
+          <div><p>A powder alert only works if guests believe the number will not become another campaign target.</p></div>
+          <div><p>The alert channel kept its integrity season after season.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <header class="section__header">
+        <p class="kicker">02 / Operating model</p>
+        <div>
+          <h2>One source of truth, many downstream obligations.</h2>
+          <p class="section__lede">
+            The product sits between messy operational reality and polished guest-facing surfaces.
+            Its job is to absorb disagreement, preserve accountability, and publish a clean signal.
+          </p>
+        </div>
+      </header>
+
+      <div class="operating-model" aria-label="Mountain Powder operating model">
+        <div class="model-column">
+          <div class="model-column__top">
+            <span>Input</span>
+            <span>Resort ops</span>
+          </div>
+          <div class="model-column__title">
+            <h3>Local mountain reality</h3>
+            <p>Reporters combine observed conditions, lift and trail status, live station feeds, and human judgement.</p>
+          </div>
+          <ul class="model-column__list">
+            <li>Snow report</li>
+            <li>Lift and trail status</li>
+            <li>Weather station feed</li>
+            <li>Manual override</li>
+          </ul>
+        </div>
+
+        <div class="model-column model-column--core">
+          <div class="model-column__top">
+            <span>Core</span>
+            <span>Product system</span>
+          </div>
+          <div class="model-column__title">
+            <h3>Shared schema plus accountability layer</h3>
+            <p>Responsive admin, normalized data, permissions, audit history, and a publishing model built for resort-scale variation.</p>
+          </div>
+          <ul class="model-column__list">
+            <li>Single reporter-facing surface</li>
+            <li>JSON backbone</li>
+            <li>Edit and override audit log</li>
+            <li>Redesigned around mature workflows</li>
+          </ul>
+        </div>
+
+        <div class="model-column">
+          <div class="model-column__top">
+            <span>Output</span>
+            <span>Guest channels</span>
+          </div>
+          <div class="model-column__title">
+            <h3>Consistent condition signal</h3>
+            <p>The same source feeds every surface where guests make decisions before or during a mountain day.</p>
+          </div>
+          <ul class="model-column__list">
+            <li>Operations panel</li>
+            <li>Daily snow email</li>
+            <li>Lodge signage</li>
+            <li>SMS threshold alerts</li>
+            <li>Alexa skill</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell evidence">
+      <div class="evidence-copy">
+        <header>
+          <p class="kicker">03 / Product evidence</p>
+          <h2>Operational surfaces made the system accountable.</h2>
+        </header>
+        <p>
+          The product had to work in real operational contexts: tablet use at the base
+          of the mountain, overrides during bad weather, guest alerts, and public signage.
+          The UI was only valuable if it made those situations faster and safer.
+        </p>
+        <ul class="proof-list">
+          <li>
+            <b>Admin</b>
+            <span>Designed around fast morning reporting rather than a marketing CMS model.</span>
+          </li>
+          <li>
+            <b>Signage</b>
+            <span>Public proof that the internal data spine reached the guest experience.</span>
+          </li>
+          <li>
+            <b>Alerts</b>
+            <span>A trust-sensitive channel with boundaries designed into the product policy.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="screens" aria-label="Product evidence screenshots">
+        <figure class="shot">
+          <img src="/images/QTA/Screenshot 2017-05-05 10.15.55.png" alt="Mountain Powder snow reporting admin interface" />
+          <figcaption>Reporter admin / tablet-optimized operating workflow</figcaption>
+        </figure>
+        <figure class="shot shot--offset">
+          <img src="/images/QTA/signage.png" alt="Lodge signage driven by Mountain Powder" />
+          <figcaption>Lodge signage / downstream proof of the shared data spine</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <header class="section__header">
+        <p class="kicker">04 / Outcomes</p>
+        <div>
+          <h2>The result was a durable operating asset.</h2>
+          <p class="section__lede">
+            The leverage shows up as less duplication, clearer accountability, stronger
+            guest trust, and a platform that could absorb growth without a restart.
+          </p>
+        </div>
+      </header>
+
+      <div class="outcomes" aria-label="Outcomes">
+        <div class="outcome">
+          <b>All resorts</b>
+          <span>The system moved from initial resort coverage to a portfolio-wide condition reporting backbone.</span>
+        </div>
+        <div class="outcome">
+          <b>~30 min</b>
+          <span>Returned to each reporter in the morning workflow that had been split across tools.</span>
+        </div>
+        <div class="outcome">
+          <b>100%</b>
+          <span>Edits and overrides audit-logged so the company can prove what guests saw.</span>
+        </div>
+        <div class="outcome">
+          <b>7+ years</b>
+          <span>Production life with a redesign around maturity rather than a costly replacement cycle.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="shell closing__grid">
+      <div>
+        <h2>The product became institutional memory.</h2>
+        <p>
+          Mountain Powder started as a tool to give a reporter back half an hour every
+          morning. It became the data spine behind guest-facing operations, alerting,
+          signage, snow email, and the audit record the business depends on.
+        </p>
+      </div>
+
+      <nav class="adjacent" aria-label="Adjacent work">
+        <a href="#">
+          <span>Next</span>
+          <b>Corduroy Design System</b>
+        </a>
+        <a href="#">
+          <span>Prev</span>
+          <b>Ikon Pass 26/27</b>
+        </a>
+      </nav>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="shell foot__inner">
+    <span>Steven Hubert / 2026</span>
+    <span><a href="/work/">Index of work</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

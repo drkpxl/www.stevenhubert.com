@@ -9,6 +9,15 @@ excerpt: "A small Flask service that ingests data from every weather-station ven
 categories: [Product, Data, Infrastructure]
 tags: [python, flask, weather, docker, alterra]
 sourceDate: 2024-12-01
+stats:
+  - n: "1"
+    u: "schema"
+    l: "From many station vendors"
+    d: "Per-vendor parsers normalize into one stream relayed upstream to PWS Weather."
+  - n: "1"
+    u: "container"
+    l: "Dev and prod parity"
+    d: "Runs the same in development as it does in production. Small surface, large operational value."
 ---
 
 Weather Relay is a small piece of infrastructure that fixes a specific problem at the resorts. Every mountain runs a different mix of weather stations, each with its own API, its own data format, and its own quirks. Downstream systems like PWS Weather expect a single normalized stream. Weather Relay sits between them.

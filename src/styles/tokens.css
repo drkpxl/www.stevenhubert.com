@@ -4,7 +4,7 @@
   --color-paper-shade: #E6EAEE;
   --color-ink:         #0E1620;
   --color-ink-soft:    #4E5A66;
-  --color-ink-faint:   #8E9AA6;
+  --color-ink-faint:   #66727E; /* 4.5:1 on paper, WCAG AA */
   --color-rule:        #C8D0D8;
   --color-rule-strong: #0E1620;
   --color-alpen:       #1F55B8;

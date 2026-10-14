@@ -3,7 +3,6 @@ title: Why Did You Vote
 tier: '2'
 featured: false
 order: 16
-heroImage: https://placehold.co/1600x900?text=Why+Did+You+Vote
 excerpt: "After the 2024 election I built a quiet, anonymous stream of one-paragraph reasons US voters gave for their choice. No accounts, no metrics surfaced, three weeks to build, about ten dollars a month to run."
 categories: [Product, Personal Project]
 tags: [civic tech, node, sqlite, cloudflare, content moderation]
@@ -27,9 +26,6 @@ stats:
 ---
 
 After the 2024 election I wanted to read why people had voted, not how loud they were about it. The feeds I was on were not giving me that, so I built Why Did You Vote, a site that took anonymous one-paragraph reasons from US voters and surfaced them as a quiet stream you could scroll.
-
-![Why Did You Vote landing page](https://placehold.co/1200x675?text=Submission+stream)
-*The submission stream, intentionally low on chrome and high on text*
 
 The build took about three weeks. Node and Express on the server, EJS for templates, SQLite for the store, Tailwind for the front, the Google Perspective API for moderation, and Cloudflare for geolocation, CAPTCHA, and rate limiting. Total run cost was roughly ten dollars a month, which mattered because I wanted to keep it running through the long tail after the election heat died down, not just for the post-election news cycle.
 

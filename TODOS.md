@@ -2,6 +2,15 @@
 
 Punchlist for things that need your input, decision, or content. Grouped by the kind of work needed. Tick off as you go.
 
+## Launch pass (Oct 14 2026)
+
+- Every in-file `TODO` prompt now sits inside an MDX comment (`{/* ... */}`), so it stays in the source but never renders. Resolve them in place as before.
+- Placeholder images (placehold.co) were removed. Tier 1 cards with no hero now show a typographic cover tile instead.
+- `custom-maps` and `ecommerce-deployments` carry `draft: true` and are not built. Custom Maps copy was inferred, and Ecommerce Deployments was a keep-or-cut call. Flip the flag when they're ready.
+- Featured order for the design-led homepage: Crafting an Ikon, Mountain Powder, Corduroy, Ikon Pass 26/27, Sitecore modular UX, We Choose the Moon, Laser Map Studio. Everything else keeps its prior relative order.
+- Source captures moved out of the repo to `~/Code/www-stevenhubert-design-captures/` on MMM4. The Corduroy captures show an internal Alterra leadership deck and should not be public.
+- Number check needed: Corduroy says 19 resort websites, Sitecore says 15 resorts, Mountain Powder says fifteen resorts, and the resume says 14 resort websites. Mountain Powder also says six resorts in 2017 but "shipped it in 2020" in the redesign section.
+
 ## Content needed per entry
 
 Each item below has an in-file `TODO` block with the same prompt for context. Resolving them means the entry can stand on its own without another pass from me.

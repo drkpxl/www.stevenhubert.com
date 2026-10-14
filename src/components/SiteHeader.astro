@@ -4,9 +4,9 @@ const isActive = (href: string) => path === href || path.startsWith(href + '/');
 ---
 <header class="site-header">
   <div class="inset">
-    <a href="/" class="brand" aria-label="Steven Hubert — home">
+    <a href="/" class="brand" aria-label="Steven Hubert, home">
       <span class="brand__name">Steven Hubert</span>
-      <span class="brand__role">Digital Experience · Alterra</span>
+      <span class="brand__role">Product Design &amp; Digital Experience</span>
     </a>
     <nav aria-label="Primary">
       <a href="/work/" aria-current={isActive('/work') ? 'page' : undefined}>Work</a>
@@ -90,5 +90,7 @@ const isActive = (href: string) => path === href || path.startsWith(href + '/');
     .brand { flex-direction: column; gap: 4px; align-items: flex-start; }
     .brand__role { font-size: 12px; }
     nav { gap: 18px; }
+    /* 44px-tall tap targets without changing the header height */
+    nav a { padding-block: 12px; margin-block: -12px; }
   }
 </style>

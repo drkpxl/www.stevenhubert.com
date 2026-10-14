@@ -10,6 +10,7 @@ const work = defineCollection({
     role: z.string().optional(),
     tier: z.enum(['1', '2']),
     featured: z.boolean().default(false),
+    draft: z.boolean().default(false),
     order: z.number().default(0),
     heroImage: z.string().optional(),
     excerpt: z.string(),
